@@ -29,7 +29,8 @@ body {
     radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.14), transparent 30%),
     linear-gradient(180deg, #020617 0%, #020817 48%, #020617 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+  font-feature-settings: "ss01" 1, "cv01" 1, "cv10" 1;
   text-rendering: optimizeLegibility;
 }
 
@@ -48,6 +49,23 @@ a {
     background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.58));
     border: 1px solid var(--border);
     backdrop-filter: blur(18px);
+  }
+
+  .section-backdrop {
+    position: relative;
+  }
+
+  .section-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 2rem 0;
+    z-index: -1;
+    border-radius: 2.5rem;
+    background:
+      linear-gradient(180deg, rgba(15, 23, 42, 0.34), rgba(15, 23, 42, 0.08)),
+      radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    opacity: 0.9;
   }
 
   .section-shell {
@@ -78,5 +96,20 @@ a {
 
   .mask-bottom {
     mask-image: linear-gradient(to bottom, black 74%, transparent 100%);
+  }
+
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: min(88%, 72rem);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.24), transparent);
   }
 }

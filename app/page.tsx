@@ -19,7 +19,7 @@ export default function Home() {
     <main id="top" className="overflow-x-hidden">
       <Navbar />
 
-      <section className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-40">
+      <section className="section-divider relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-40">
         <div className="absolute inset-0 -z-10">
           <div className="absolute left-[10%] top-20 h-72 w-72 rounded-full bg-primary/20 blur-[120px]" />
           <div className="absolute right-[12%] top-28 h-96 w-96 rounded-full bg-cyan/10 blur-[150px]" />
@@ -44,10 +44,25 @@ export default function Home() {
                 View services
               </Button>
             </div>
-            <div className="mt-10 grid gap-4 text-sm text-slate-400 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">AI strategy, adoption, and delivery</div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">Cloud architecture and modernisation</div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">Hands-on training and enablement</div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              {[
+                "AI strategy, adoption, and delivery",
+                "Cloud architecture and modernisation",
+                "Hands-on training and enablement",
+              ].map((item, index) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+                >
+                  <div className="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-primary via-cyan to-purple" style={{ opacity: 0.8 - index * 0.12 }} />
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 flex flex-wrap gap-3 text-xs uppercase tracking-[0.26em] text-slate-400">
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Founder-led</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">UK-focused consultancy</span>
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Delivery + enablement</span>
             </div>
           </div>
 
@@ -55,7 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-divider py-20">
         <div className="section-shell">
           <SectionHeading
             eyebrow="Credibility"
@@ -66,6 +81,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {credibilityItems.map((item) => (
               <Card key={item.title}>
+                <div className="mb-5 h-1 w-14 rounded-full bg-gradient-to-r from-primary via-cyan to-purple" />
                 <CardTitle>{item.title}</CardTitle>
                 <CardCopy>{item.description}</CardCopy>
               </Card>
@@ -74,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="py-20">
+      <section id="services" className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
             eyebrow="Services"
@@ -86,11 +102,19 @@ export default function Home() {
             {serviceItems.map((service) => (
               <Card key={service.title} className="flex h-full flex-col justify-between">
                 <div>
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-cyan" />
+                    <span className="h-px flex-1 bg-gradient-to-r from-cyan/60 to-transparent" />
+                  </div>
                   <CardTitle>{service.title}</CardTitle>
                   <CardCopy>{service.description}</CardCopy>
                 </div>
-                <a href="#contact" className="mt-8 inline-flex text-sm font-medium text-cyan-300 transition hover:text-cyan-200">
-                  {service.cta}
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 transition hover:translate-x-0.5 hover:text-cyan-200"
+                >
+                  <span>{service.cta}</span>
+                  <span aria-hidden="true">→</span>
                 </a>
               </Card>
             ))}
@@ -98,7 +122,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="training" className="py-20">
+      <section id="training" className="section-divider py-20">
         <div className="section-shell">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
@@ -109,6 +133,11 @@ export default function Home() {
               />
               <div className="mt-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-primary/20 via-white/5 to-purple/10 p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">Training outcomes</p>
+                <div className="mt-5 flex flex-wrap gap-3 text-xs uppercase tracking-[0.24em] text-slate-300">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Business workshops</span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Schools and students</span>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Custom team sessions</span>
+                </div>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-200">
                   <li>Build internal confidence across AI, cloud, and software delivery.</li>
                   <li>Reduce friction when adopting new tools or workflows.</li>
@@ -127,6 +156,9 @@ export default function Home() {
             <div className="grid gap-6 md:grid-cols-2">
               {trainingItems.map((item) => (
                 <Card key={item.title}>
+                  <div className="mb-5 inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-cyan-200">
+                    Workshop
+                  </div>
                   <CardTitle>{item.title}</CardTitle>
                   <CardCopy>{item.description}</CardCopy>
                 </Card>
@@ -136,7 +168,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
             eyebrow="Why Bytecode"
@@ -148,7 +180,7 @@ export default function Home() {
             <Card className="overflow-hidden p-8">
               <div className="grid gap-6 md:grid-cols-2">
                 {differentiators.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                  <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                     <p className="text-sm leading-6 text-slate-200">{item}</p>
                   </div>
                 ))}
@@ -172,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="py-20">
+      <section id="process" className="section-divider py-20">
         <div className="section-shell">
           <SectionHeading
             eyebrow="Process"
@@ -183,7 +215,8 @@ export default function Home() {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-4">
             {processSteps.map((step, index) => (
-              <Card key={step.title} className="relative">
+              <Card key={step.title} className="relative overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-cyan to-purple" />
                 <div className="absolute right-6 top-6 text-4xl font-semibold text-white/10">0{index + 1}</div>
                 <CardTitle>{step.title}</CardTitle>
                 <CardCopy>{step.description}</CardCopy>
@@ -193,7 +226,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="solutions" className="py-20">
+      <section id="solutions" className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
             eyebrow="Use Cases"
@@ -204,6 +237,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {solutionItems.map((item) => (
               <Card key={item.title}>
+                <div className="mb-5 text-[11px] uppercase tracking-[0.3em] text-slate-500">Example engagement</div>
                 <CardTitle>{item.title}</CardTitle>
                 <CardCopy>{item.description}</CardCopy>
               </Card>
@@ -212,12 +246,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-20">
+      <section id="about" className="section-divider py-20">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <Card className="p-8">
               <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">About</p>
               <h2 className="mt-4 text-3xl font-semibold text-white">Founder-led, senior-level technical delivery.</h2>
+              <p className="mt-5 text-sm leading-7 text-slate-300">
+                Built for organisations that need thoughtful implementation, clear guidance, and a partner who can also help their people grow in confidence.
+              </p>
             </Card>
 
             <Card className="p-8">
@@ -226,6 +263,11 @@ export default function Home() {
                 The consultancy model is deliberately hands-on: solving business problems, improving technical capability, and helping teams
                 become more confident through mentoring, workshops, and strong implementation.
               </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200">Senior engineering thinking</div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200">Modern cloud and AI delivery</div>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200">Capability building through training</div>
+              </div>
             </Card>
           </div>
         </div>
@@ -240,6 +282,13 @@ export default function Home() {
                 title="Ready to plan your next project, platform, or workshop?"
                 copy="Start with a conversation about your goals, current constraints, and the most sensible next step. Consultancy, delivery, and training engagements are all welcome."
               />
+
+              <div className="mt-8 rounded-[2rem] border border-cyan/20 bg-gradient-to-br from-cyan/10 via-white/5 to-transparent p-6">
+                <p className="text-sm uppercase tracking-[0.28em] text-cyan-200">Best fit engagements</p>
+                <p className="mt-3 text-sm leading-7 text-slate-300">
+                  AI enablement, cloud migration, software delivery, automation projects, internal tools, and practical workshops for businesses or education settings.
+                </p>
+              </div>
 
               <div className="mt-10 space-y-5">
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5">

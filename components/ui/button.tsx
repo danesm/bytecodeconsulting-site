@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const baseStyles =
-  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400";
+  "inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold tracking-[0.01em] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
@@ -34,25 +34,36 @@ type ButtonActionProps = SharedProps & {
 
 export function Button(props: ButtonLinkProps | ButtonActionProps) {
   const classes = cn(baseStyles, variantStyles[props.variant ?? "primary"], props.className);
+  const content = (
+    <>
+      <span>{props.children}</span>
+      <span aria-hidden="true" className="text-base leading-none transition-transform duration-300 group-hover:translate-x-0.5">
+        →
+      </span>
+    </>
+  );
 
   if ("href" in props && props.href) {
     return (
       <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-        <Link className={classes} href={props.href}>
-          {props.children}
+        <Link className={cn(classes, "group")} href={props.href}>
+          {content}
         </Link>
       </motion.div>
     );
   }
 
+  const buttonProps = props as ButtonActionProps;
+  const buttonType = buttonProps.type ?? "button";
+
   return (
     <motion.button
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
-      className={classes}
-      type={props.type ?? "button"}
+      className={cn(classes, "group")}
+      type={buttonType}
     >
-      {props.children}
+      {content}
     </motion.button>
   );
 }
