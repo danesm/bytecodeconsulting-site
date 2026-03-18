@@ -1,0 +1,20 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="320" fill="#020617"/>
+  <rect x="60" y="60" width="200" height="200" rx="40" fill="#0F172A"/>
+  <path d="M130 110L98 160L130 210" stroke="url(#grad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 110L222 160L190 210" stroke="url(#grad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="160" cy="128" r="8" fill="#06B6D4"/>
+  <circle cx="160" cy="160" r="8" fill="#2563EB"/>
+  <circle cx="160" cy="192" r="8" fill="#7C3AED"/>
+  <path d="M160 136V184" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round"/>
+  <text x="320" y="144" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="700" letter-spacing="2">Bytecode</text>
+  <text x="320" y="220" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="40" letter-spacing="6">CONSULTING</text>
+  <text x="320" y="270" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="2">AI • Cloud • Software Engineering • Training</text>
+  <defs>
+    <linearGradient id="grad" x1="98" y1="110" x2="222" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="0.5" stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+</svg>
