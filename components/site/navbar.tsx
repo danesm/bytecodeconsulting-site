@@ -49,7 +49,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a href="#contact" className="hidden text-sm text-slate-300 transition hover:text-white xl:inline-flex">
-            hello@bytecodeconsulting.com
+            danesh@bytecodeconsulting.com
           </a>
           <Button href="#contact" className="px-4 py-2.5 text-sm">
             Book a consultation

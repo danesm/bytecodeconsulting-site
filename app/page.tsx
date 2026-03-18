@@ -293,7 +293,7 @@ export default function Home() {
               <div className="mt-10 space-y-5">
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
                   <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Email</p>
-                  <p className="mt-2 text-lg text-white">hello@bytecodeconsulting.com</p>
+                  <p className="mt-2 text-lg text-white">danesh@bytecodeconsulting.com</p>
                 </div>
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
                   <p className="text-sm uppercase tracking-[0.28em] text-slate-400">LinkedIn</p>

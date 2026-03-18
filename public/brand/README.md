@@ -47,7 +47,7 @@ If you want the browser tab icon updated too, replace `app/icon.svg`.
 
 The website currently uses placeholders for:
 
-- `hello@bytecodeconsulting.com`
+- `danesh@bytecodeconsulting.com`
 - `linkedin.com/in/your-profile`
 - `calendly.com/your-handle`
 
