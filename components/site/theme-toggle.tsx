@@ -22,9 +22,9 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan/40 hover:bg-white/10"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:border-cyan/40 hover:bg-white/10"
     >
-      <span className="text-lg leading-none">{theme === "light" ? "☀" : "☾"}</span>
+      <span className="text-base leading-none">{theme === "light" ? "☀" : "☾"}</span>
     </button>
   );
 }

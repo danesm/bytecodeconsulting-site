@@ -44,16 +44,23 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="p-8">
+    <Card className="relative overflow-hidden border-cyan/20 p-8 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_30px_100px_rgba(2,6,23,0.45)]">
+      <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-cyan/80 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-10 right-0 w-px bg-gradient-to-b from-transparent via-cyan/40 to-transparent" />
       <form className="grid gap-5" onSubmit={handleSubmit}>
         <input type="hidden" name="access_key" value="a5d942d1-ec73-4444-956d-4b6144451b39" />
         <input type="hidden" name="subject" value="New Bytecode Consulting enquiry" />
         <input type="hidden" name="from_name" value="Bytecode Consulting Website" />
         <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
+        <div className="rounded-2xl border border-cyan/20 bg-cyan/10 px-4 py-3">
+          <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200">Send enquiry</p>
+          <p className="mt-2 text-sm leading-6 text-slate-300">Tell us a little about the project, training need, or workshop you have in mind.</p>
+        </div>
+
         <div className="grid gap-5 md:grid-cols-2">
           <label className="grid gap-2 text-sm text-slate-300">
-            Name
+            Your name
             <input
               type="text"
               name="name"
@@ -64,7 +71,7 @@ export function ContactForm() {
             />
           </label>
           <label className="grid gap-2 text-sm text-slate-300">
-            Email
+            Email address
             <input
               type="email"
               name="email"
@@ -78,7 +85,7 @@ export function ContactForm() {
 
         <div className="grid gap-5 md:grid-cols-2">
           <label className="grid gap-2 text-sm text-slate-300">
-            Company
+            Company or organisation
             <input
               type="text"
               name="company"
@@ -88,7 +95,7 @@ export function ContactForm() {
             />
           </label>
           <label className="grid gap-2 text-sm text-slate-300">
-            Project type
+            Type of enquiry
             <select
               name="projectType"
               defaultValue=""
@@ -108,7 +115,7 @@ export function ContactForm() {
         </div>
 
         <label className="grid gap-2 text-sm text-slate-300">
-          Message
+          Project details
           <textarea
             name="message"
             required

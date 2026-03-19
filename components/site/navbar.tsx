@@ -51,9 +51,6 @@ export function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <ThemeToggle />
-            <Link href="/contact" className="hidden text-sm text-slate-300 transition hover:text-white xl:inline-flex">
-              admin@bytecodeconsulting.com
-            </Link>
             <Button href="/contact" className="px-4 py-2.5 text-sm">
               Book a consultation
             </Button>
@@ -82,9 +79,6 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">
-              admin@bytecodeconsulting.com
-            </div>
             <div className="flex justify-start">
               <ThemeToggle />
             </div>

@@ -30,7 +30,7 @@ export default function Home() {
               Practical AI, cloud, software, and training for growing organisations
             </div>
             <h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Practical AI and modern technical delivery for <span className="text-gradient">growing organisations</span>.
+              Use AI, cloud, and modern software to <span className="text-gradient">move your business forward with confidence</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
               Bytecode Consulting helps growing businesses use AI intelligence, cloud, and modern software to reduce manual work, improve service,
