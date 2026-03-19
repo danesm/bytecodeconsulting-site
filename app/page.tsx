@@ -36,7 +36,7 @@ export default function Home() {
               Bytecode Consulting helps growing businesses use AI intelligence, cloud, and modern software to reduce manual work, improve service,
               and move forward with confidence.
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
+            <p className="mt-4 max-w-2xl text-base italic leading-7 text-slate-400">
               Practical delivery, sensible pricing, and training designed for real-world use.
             </p>
             <blockquote className="mt-5 max-w-2xl text-lg italic leading-8 text-cyan-100 sm:text-xl">

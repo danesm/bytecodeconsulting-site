@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white">Bytecode Consulting</p>
             <p className="mt-1 text-sm text-slate-400">AI • Cloud • Software Engineering • Training</p>
-            <p className="mt-1 text-sm text-slate-500">Dartford, Kent • Supporting local and UK organisations</p>
+            <p className="mt-1 text-sm text-slate-500">Dartford, Kent</p>
           </div>
         </div>
 

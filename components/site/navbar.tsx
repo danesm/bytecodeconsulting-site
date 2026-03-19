@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/site/logo-mark";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/lib/site-content";
 
@@ -49,6 +50,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
             <Link href="/contact" className="hidden text-sm text-slate-300 transition hover:text-white xl:inline-flex">
               admin@bytecodeconsulting.com
             </Link>
@@ -82,6 +84,9 @@ export function Navbar() {
             ))}
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">
               admin@bytecodeconsulting.com
+            </div>
+            <div className="flex justify-start">
+              <ThemeToggle />
             </div>
             <Button href="/contact" className="w-full justify-center">
               Book a consultation

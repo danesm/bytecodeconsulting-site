@@ -126,7 +126,7 @@ export function ContactForm() {
 
         <div className="flex flex-col gap-4 border-t border-white/10 pt-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm leading-6 text-slate-400">
-            Send an enquiry and we&apos;ll review your request before getting back to you with the most sensible next step.
+            Send an enquiry and we&apos;ll get back to you with the next step.
           </p>
           <Button type="submit" className={isSubmitting ? "pointer-events-none opacity-70" : ""}>
             {isSubmitting ? "Sending enquiry" : "Send enquiry"}

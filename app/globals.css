@@ -4,12 +4,46 @@
 
 :root {
   color-scheme: dark;
-  --background: #020617;
+  --background-start: #020617;
+  --background-mid: #020817;
+  --background-end: #020617;
   --surface: rgba(15, 23, 42, 0.72);
   --surface-strong: rgba(15, 23, 42, 0.94);
+  --surface-glass-start: rgba(15, 23, 42, 0.8);
+  --surface-glass-end: rgba(15, 23, 42, 0.58);
   --foreground: #ffffff;
   --muted: #94a3b8;
   --border: rgba(148, 163, 184, 0.16);
+  --grid-line: rgba(37, 99, 235, 0.08);
+  --section-backdrop-start: rgba(15, 23, 42, 0.34);
+  --section-backdrop-end: rgba(15, 23, 42, 0.08);
+  --section-backdrop-glow: rgba(37, 99, 235, 0.08);
+  --divider-line: rgba(148, 163, 184, 0.24);
+  --logo-surface: #0f172a;
+  --logo-line: #e2e8f0;
+  --panel-shadow: 0 24px 80px rgba(2, 6, 23, 0.55);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --background-start: #f8fbff;
+  --background-mid: #eef4ff;
+  --background-end: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --surface-glass-start: rgba(255, 255, 255, 0.94);
+  --surface-glass-end: rgba(241, 245, 249, 0.86);
+  --foreground: #0f172a;
+  --muted: #475569;
+  --border: rgba(15, 23, 42, 0.1);
+  --grid-line: rgba(37, 99, 235, 0.1);
+  --section-backdrop-start: rgba(255, 255, 255, 0.8);
+  --section-backdrop-end: rgba(241, 245, 249, 0.6);
+  --section-backdrop-glow: rgba(37, 99, 235, 0.06);
+  --divider-line: rgba(15, 23, 42, 0.12);
+  --logo-surface: #ffffff;
+  --logo-line: #0f172a;
+  --panel-shadow: 0 18px 70px rgba(148, 163, 184, 0.28);
 }
 
 * {
@@ -27,7 +61,7 @@ body {
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 30%),
     radial-gradient(circle at top right, rgba(6, 182, 212, 0.12), transparent 28%),
     radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.14), transparent 30%),
-    linear-gradient(180deg, #020617 0%, #020817 48%, #020617 100%);
+    linear-gradient(180deg, var(--background-start) 0%, var(--background-mid) 48%, var(--background-end) 100%);
   color: var(--foreground);
   font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
   font-feature-settings: "ss01" 1, "cv01" 1, "cv10" 1;
@@ -46,9 +80,10 @@ a {
 
 @layer components {
   .glass-panel {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.58));
+    background: linear-gradient(180deg, var(--surface-glass-start), var(--surface-glass-end));
     border: 1px solid var(--border);
     backdrop-filter: blur(18px);
+    box-shadow: var(--panel-shadow);
   }
 
   .section-backdrop {
@@ -62,9 +97,9 @@ a {
     z-index: -1;
     border-radius: 2.5rem;
     background:
-      linear-gradient(180deg, rgba(15, 23, 42, 0.34), rgba(15, 23, 42, 0.08)),
-      radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%);
-    border: 1px solid rgba(148, 163, 184, 0.08);
+      linear-gradient(180deg, var(--section-backdrop-start), var(--section-backdrop-end)),
+      radial-gradient(circle at top left, var(--section-backdrop-glow), transparent 32%);
+    border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
     opacity: 0.9;
   }
 
@@ -82,8 +117,8 @@ a {
 
   .grid-glow {
     background-image:
-      linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 54px 54px;
   }
 
@@ -112,4 +147,73 @@ a {
     transform: translateX(-50%);
     background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.24), transparent);
   }
+}
+
+html[data-theme="light"] .text-gradient {
+  background: linear-gradient(120deg, #0f172a 10%, #1d4ed8 48%, #0891b2 72%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .text-slate-100 {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .text-slate-200 {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .text-slate-300 {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .text-slate-400,
+html[data-theme="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] .text-cyan-100,
+html[data-theme="light"] .text-cyan-200 {
+  color: #0f766e !important;
+}
+
+html[data-theme="light"] .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.72) !important;
+}
+
+html[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-theme="light"] .bg-white\/\[0\.03\] {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html[data-theme="light"] .bg-white\/\[0\.04\] {
+  background-color: rgba(255, 255, 255, 0.76) !important;
+}
+
+html[data-theme="light"] .bg-slate-950\/70 {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+html[data-theme="light"] .bg-slate-950\/80 {
+  background-color: rgba(241, 245, 249, 0.88) !important;
+}
+
+html[data-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html[data-theme="light"] .hover\:text-white:hover {
+  color: #0f172a !important;
 }
