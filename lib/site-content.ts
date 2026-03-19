@@ -1,11 +1,17 @@
 export const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Training", href: "#training" },
-  { label: "Process", href: "#process" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Training", href: "/training" },
+  { label: "Schools & Students", href: "/schools-students" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
+
+export const localPositioning = {
+  eyebrow: "Kent-Based Consultancy",
+  title: "Based in Dartford, supporting Kent, London, and UK organisations with practical technical delivery.",
+  copy:
+    "Bytecode Consulting is positioned to help local businesses and growing organisations adopt AI, automation, and cloud technology in ways that improve service quality, reduce manual overhead, and stay commercially sensible.",
+};
 
 export const credibilityItems = [
   {
@@ -78,7 +84,8 @@ export const serviceItems = [
 export const trainingItems = [
   {
     title: "Business AI Workshops",
-    description: "Focused sessions that help teams understand AI use cases, risk boundaries, prompt workflows, and adoption strategy.",
+    description:
+      "Focused sessions that help teams understand AI use cases, risk boundaries, prompt workflows, and adoption strategy.",
   },
   {
     title: "Cloud Fundamentals Training",
@@ -86,7 +93,8 @@ export const trainingItems = [
   },
   {
     title: "Software Engineering Mentoring",
-    description: "Structured mentoring for developers or teams covering delivery quality, architecture habits, and modern engineering practice.",
+    description:
+      "Structured mentoring for developers or teams covering delivery quality, architecture habits, and modern engineering practice.",
   },
   {
     title: "Student and School Workshops",
@@ -98,12 +106,32 @@ export const trainingItems = [
   },
 ];
 
+export const schoolWorkshopItems = [
+  {
+    title: "AI Awareness Sessions",
+    description: "Accessible introductions to how AI works, where it helps, and how to use it thoughtfully in education and everyday work.",
+  },
+  {
+    title: "Computing and Cloud Workshops",
+    description: "Modern sessions that connect classroom concepts to the way real digital systems are built and operated.",
+  },
+  {
+    title: "Beginner-to-Intermediate Coding Workshops",
+    description: "Practical sessions for students building confidence in software development, problem-solving, and technical creativity.",
+  },
+  {
+    title: "Career and Skills Talks",
+    description: "Founder-led talks that help students understand pathways into technology, engineering habits, and current industry expectations.",
+  },
+];
+
 export const differentiators = [
   "Enterprise-grade engineering judgement applied with boutique consultancy focus.",
   "Pragmatic delivery that meets small businesses and growing teams where they are.",
   "Cloud-native architecture patterns designed for resilience, security, and scale.",
   "AI-first thinking grounded in operational usefulness, not hype.",
   "Hands-on teaching, mentoring, and enablement built into delivery.",
+  "Access to strong offshore delivery partners, with 90+ developers across multiple locations for larger-scale project support.",
   "Tailored solutions for SMEs, schools, startups, and established organisations.",
 ];
 
@@ -159,5 +187,6 @@ export const projectTypes = [
   "Web/software build",
   "Automation",
   "Training/workshop",
+  "Schools/student workshop",
   "Other",
 ];
