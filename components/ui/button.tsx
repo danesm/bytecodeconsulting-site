@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -30,7 +31,7 @@ type ButtonLinkProps = SharedProps & {
 type ButtonActionProps = SharedProps & {
   href?: undefined;
   type?: "button" | "submit" | "reset";
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button(props: ButtonLinkProps | ButtonActionProps) {
   const classes = cn(baseStyles, variantStyles[props.variant ?? "primary"], props.className);
@@ -53,17 +54,15 @@ export function Button(props: ButtonLinkProps | ButtonActionProps) {
     );
   }
 
-  const buttonProps = props as ButtonActionProps;
+  const { variant: _variant, className: _className, children: _children, href: _href, ...buttonProps } =
+    props as ButtonActionProps;
   const buttonType = buttonProps.type ?? "button";
 
   return (
-    <motion.button
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.98 }}
-      className={cn(classes, "group")}
-      type={buttonType}
-    >
-      {content}
-    </motion.button>
+    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+      <button className={cn(classes, "group")} type={buttonType} {...buttonProps}>
+        {content}
+      </button>
+    </motion.div>
   );
 }
