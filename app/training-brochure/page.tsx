@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { trainingItems } from "@/lib/site-content";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Training Brochure",
   description: "Reusable training brochure page for Bytecode Consulting workshops and mentoring services.",
-};
+  path: "/training-brochure/",
+});
 
 export default function TrainingBrochurePage() {
   return (

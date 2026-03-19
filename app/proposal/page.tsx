@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Proposal Template",
   description: "A reusable proposal page template for Bytecode Consulting client engagements.",
-};
+  path: "/proposal/",
+});
 
 const sections = [
   {

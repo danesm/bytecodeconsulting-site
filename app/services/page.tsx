@@ -5,11 +5,21 @@ import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import { processSteps, serviceItems, solutionItems } from "@/lib/site-content";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Services",
-  description: "AI, cloud, software engineering, automation, internal tools, advisory, and technical delivery services from Bytecode Consulting.",
-};
+  description:
+    "AI, cloud, software engineering, automation, website chatbots, internal tools, advisory, and technical delivery services from Bytecode Consulting.",
+  path: "/services/",
+  keywords: [
+    "AI consulting services",
+    "Cloud migration services",
+    "Website chatbot development",
+    "Internal tools consultancy",
+    "Automation services UK",
+  ],
+});
 
 export default function ServicesPage() {
   return (
