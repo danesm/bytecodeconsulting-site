@@ -33,7 +33,7 @@ export function Navbar() {
       >
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3.5">
-            <LogoMark className="h-12 w-12" />
+            <LogoMark className="h-12 w-12 sm:h-14 sm:w-14" />
             <div>
               <div className="text-sm font-semibold tracking-[0.2em] text-white">BYTECODE</div>
               <div className="text-xs uppercase tracking-[0.32em] text-slate-400">Consulting</div>

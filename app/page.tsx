@@ -33,12 +33,15 @@ export default function Home() {
               Practical AI and modern technical delivery for <span className="text-gradient">growing organisations</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Bytecode Consulting helps businesses, schools, and local organisations adopt AI sensibly, modernise software and cloud platforms,
-              automate manual work, and build internal confidence through practical training.
+              Bytecode Consulting helps growing businesses use AI intelligence, cloud, and modern software to reduce manual work, improve service,
+              and move forward with confidence.
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
-              Helping growing businesses use AI and modern technology in a practical, cost-conscious way.
+              Practical delivery, sensible pricing, and training designed for real-world use.
             </p>
+            <blockquote className="mt-5 max-w-2xl text-lg italic leading-8 text-cyan-100 sm:text-xl">
+              “The question is no longer whether AI matters, but how to apply it in a practical, cost-conscious way.”
+            </blockquote>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button href="/contact">Book a consultation</Button>
               <Button href="/services" variant="secondary">
@@ -49,7 +52,7 @@ export default function Home() {
               {[
                 "Reduce repetitive work with AI, automation, and intelligent website chatbots",
                 "Modern websites, cloud systems, and internal tools for growing businesses",
-                "AI-enabled websites from £99, with optional support from £19.99 per calendar month",
+                "Starter AI-enabled websites from £99. Optional support from £19.99 per month",
               ].map((item, index) => (
                 <div
                   key={item}

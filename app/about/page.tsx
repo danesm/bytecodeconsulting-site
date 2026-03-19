@@ -28,10 +28,19 @@ export default function AboutPage() {
             <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Local roots</p>
             <h2 className="mt-4 text-3xl font-semibold text-white">A Kent-based consultancy with a practical focus on local business value.</h2>
             <p className="mt-5 text-base leading-8 text-slate-300">{localPositioning.copy}</p>
+            <div className="mt-6 rounded-2xl border border-cyan/20 bg-cyan/10 p-6">
+              <p className="text-lg italic leading-8 text-cyan-50 sm:text-xl">
+                “AI should create operational value, not just excitement. The real advantage goes to organisations that apply it clearly, practically, and with purpose.”
+              </p>
+            </div>
           </Card>
           <Card className="p-8">
-            <p className="text-base leading-8 text-slate-300">
-              The consultancy model is deliberately hands-on: helping businesses improve operations, modernise systems, make better use of AI and cloud, and leave teams more confident through workshops, mentoring, and strong implementation discipline.
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Working principle</p>
+            <blockquote className="mt-5 text-2xl italic leading-9 text-white sm:text-3xl sm:leading-[1.45]">
+              “Good technology should reduce friction, strengthen capability, and make the business easier to run.”
+            </blockquote>
+            <p className="mt-6 text-sm leading-7 text-slate-300">
+              Bytecode Consulting focuses on practical implementation, stronger systems, and confident adoption rather than technology for its own sake.
             </p>
           </Card>
         </div>
