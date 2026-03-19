@@ -5,11 +5,15 @@ import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Card } from "@/components/ui/card";
 import { differentiators, localPositioning } from "@/lib/site-content";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About",
-  description: "Founder-led consultancy combining senior engineering thinking with practical AI, cloud, software, and training delivery.",
-};
+  description:
+    "Learn about Bytecode Consulting, a Kent-based consultancy combining senior engineering thinking with practical AI, cloud, software, and training delivery.",
+  path: "/about/",
+  keywords: ["About Bytecode Consulting", "Kent consultancy", "Dartford technology consultancy"],
+});
 
 export default function AboutPage() {
   return (

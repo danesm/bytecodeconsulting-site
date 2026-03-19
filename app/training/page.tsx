@@ -6,11 +6,20 @@ import { SectionHeading } from "@/components/site/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import { trainingItems } from "@/lib/site-content";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Training",
-  description: "Business AI workshops, cloud fundamentals, software engineering mentoring, and practical team enablement from Bytecode Consulting.",
-};
+  description:
+    "Business AI workshops, cloud fundamentals, software engineering mentoring, school sessions, and practical team enablement from Bytecode Consulting.",
+  path: "/training/",
+  keywords: [
+    "AI workshops UK",
+    "Cloud fundamentals training",
+    "Software engineering mentoring",
+    "Business training consultancy",
+  ],
+});
 
 export default function TrainingPage() {
   return (

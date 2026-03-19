@@ -6,11 +6,15 @@ import { SectionHeading } from "@/components/site/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import { schoolWorkshopItems } from "@/lib/site-content";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Schools & Student Workshops",
-  description: "Workshops, talks, and practical learning sessions for schools, students, and education settings from Bytecode Consulting.",
-};
+  description:
+    "Workshops, talks, and practical learning sessions for schools, students, and education settings from Bytecode Consulting.",
+  path: "/schools-students/",
+  keywords: ["School workshops", "Student workshops", "AI workshops for schools", "Kent school technology workshops"],
+});
 
 export default function SchoolsStudentsPage() {
   return (

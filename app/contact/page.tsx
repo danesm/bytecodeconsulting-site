@@ -5,11 +5,15 @@ import { Footer } from "@/components/site/footer";
 import { Navbar } from "@/components/site/navbar";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact",
-  description: "Contact Bytecode Consulting about AI consulting, cloud projects, software delivery, automation, or training workshops.",
-};
+  description:
+    "Contact Bytecode Consulting about AI consulting, cloud projects, software delivery, automation, website chatbots, or training workshops.",
+  path: "/contact/",
+  keywords: ["Contact Bytecode Consulting", "AI consultancy contact", "Kent business technology support"],
+});
 
 export default function ContactPage() {
   return (
@@ -25,11 +29,7 @@ export default function ContactPage() {
         <div className="section-shell">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <SectionHeading
-                eyebrow="Get In Touch"
-                title="Tell us what you need and we’ll respond with a practical next step."
-                copy="Bytecode Consulting supports businesses, local organisations, and education settings across Dartford, Kent, London, and wider UK delivery."
-              />
+              <SectionHeading eyebrow="Get In Touch" title="Start your enquiry." copy="Share a few details and we’ll get back to you with the next step." />
               <div className="mt-8 rounded-[2rem] border border-cyan/20 bg-gradient-to-br from-cyan/10 via-white/5 to-transparent p-6">
                 <p className="text-sm uppercase tracking-[0.28em] text-cyan-200">Best fit engagements</p>
                 <p className="mt-3 text-sm leading-7 text-slate-300">
