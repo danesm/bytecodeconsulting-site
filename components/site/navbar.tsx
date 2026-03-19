@@ -31,8 +31,8 @@ export function Navbar() {
             : "bg-transparent",
         )}
       >
-        <a href="#top" className="flex items-center gap-3">
-          <LogoMark className="h-10 w-10" />
+        <a href="#top" className="flex items-center gap-3.5">
+          <LogoMark className="h-12 w-12" />
           <div>
             <div className="text-sm font-semibold tracking-[0.2em] text-white">BYTECODE</div>
             <div className="text-xs uppercase tracking-[0.32em] text-slate-400">Consulting</div>
@@ -49,7 +49,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <a href="#contact" className="hidden text-sm text-slate-300 transition hover:text-white xl:inline-flex">
-            danesh@bytecodeconsulting.com
+            admin@bytecodeconsulting.com
           </a>
           <Button href="#contact" className="px-4 py-2.5 text-sm">
             Book a consultation
