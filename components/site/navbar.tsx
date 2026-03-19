@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/site/logo-mark";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/lib/site-content";
 
@@ -33,7 +34,7 @@ export function Navbar() {
       >
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3.5">
-            <LogoMark className="h-12 w-12 sm:h-14 sm:w-14" />
+            <LogoMark className="h-12 w-12 sm:h-16 sm:w-16" />
             <div>
               <div className="text-sm font-semibold tracking-[0.2em] text-white">BYTECODE</div>
               <div className="text-xs uppercase tracking-[0.32em] text-slate-400">Consulting</div>
@@ -49,9 +50,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Link href="/contact" className="hidden text-sm text-slate-300 transition hover:text-white xl:inline-flex">
-              admin@bytecodeconsulting.com
-            </Link>
+            <ThemeToggle />
             <Button href="/contact" className="px-4 py-2.5 text-sm">
               Book a consultation
             </Button>
@@ -69,19 +68,19 @@ export function Navbar() {
         </div>
 
         {mobileOpen ? (
-          <div className="mt-4 grid gap-3 border-t border-white/10 pt-4 lg:hidden">
+          <div className="mt-4 grid gap-3 rounded-[1.5rem] border border-white/10 bg-[var(--surface-strong)] p-4 shadow-panel backdrop-blur-xl lg:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-200"
+                className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-slate-200"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">
-              admin@bytecodeconsulting.com
+            <div className="flex justify-start">
+              <ThemeToggle />
             </div>
             <Button href="/contact" className="w-full justify-center">
               Book a consultation
