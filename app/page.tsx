@@ -2,15 +2,13 @@ import { Footer } from "@/components/site/footer";
 import { HeroVisual } from "@/components/site/hero-visual";
 import { Navbar } from "@/components/site/navbar";
 import { SectionHeading } from "@/components/site/section-heading";
-import { ContactForm } from "@/components/site/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import {
   credibilityItems,
-  differentiators,
+  localPositioning,
   processSteps,
   serviceItems,
-  solutionItems,
   trainingItems,
 } from "@/lib/site-content";
 
@@ -26,47 +24,61 @@ export default function Home() {
           <div className="absolute inset-x-0 top-0 h-[720px] grid-glow opacity-25 mask-bottom" />
         </div>
 
-        <div className="section-shell grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="section-shell grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-3xl">
             <div className="inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-200">
-              Founder-led consultancy for AI, cloud, software, and training
+              Practical AI, cloud, software, and training for growing organisations
             </div>
             <h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Build modern digital capability with <span className="text-gradient">trusted technical delivery</span>.
+              Practical AI and modern technical delivery for <span className="text-gradient">growing organisations</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Bytecode Consulting helps UK organisations adopt AI with confidence, design cloud-ready systems,
-              ship quality software, automate operations, and upskill teams through practical training.
+              Bytecode Consulting helps growing businesses use AI intelligence, cloud, and modern software to reduce manual work, improve service,
+              and move forward with confidence.
             </p>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
+              Practical delivery, sensible pricing, and training designed for real-world use.
+            </p>
+            <blockquote className="mt-5 max-w-2xl text-lg italic leading-8 text-cyan-100 sm:text-xl">
+              “The question is no longer whether AI matters, but how to apply it in a practical, cost-conscious way.”
+            </blockquote>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button href="#contact">Book a consultation</Button>
-              <Button href="#services" variant="secondary">
-                View services
+              <Button href="/contact">Book a consultation</Button>
+              <Button href="/services" variant="secondary">
+                Explore services
               </Button>
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
-                "AI strategy, adoption, and delivery",
-                "Cloud architecture and modernisation",
-                "Hands-on training and enablement",
+                "Reduce repetitive work with AI, automation, and intelligent website chatbots",
+                "Modern websites, cloud systems, and internal tools for growing businesses",
+                "Starter AI-enabled websites from £99. Optional support from £19.99 per month",
               ].map((item, index) => (
                 <div
                   key={item}
                   className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
                 >
-                  <div className="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-primary via-cyan to-purple" style={{ opacity: 0.8 - index * 0.12 }} />
+                  <div
+                    className="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-primary via-cyan to-purple"
+                    style={{ opacity: 0.8 - index * 0.12 }}
+                  />
                   {item}
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex flex-wrap gap-3 text-xs uppercase tracking-[0.26em] text-slate-400">
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Founder-led</span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">UK-focused consultancy</span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">Delivery + enablement</span>
-            </div>
           </div>
 
           <HeroVisual />
+        </div>
+      </section>
+
+      <section className="section-divider py-20">
+        <div className="section-shell">
+          <div className="rounded-[2rem] border border-cyan/20 bg-gradient-to-br from-cyan/10 via-white/5 to-transparent p-8">
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">{localPositioning.eyebrow}</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{localPositioning.title}</h2>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">{localPositioning.copy}</p>
+          </div>
         </div>
       </section>
 
@@ -90,80 +102,78 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="section-backdrop section-divider py-20">
+      <section className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Services"
-            title="Technical services shaped for delivery, adoption, and long-term value."
-            copy="From initial strategy through implementation and enablement, the focus stays on building capability as well as shipping the work."
+            eyebrow="Core Offers"
+            title="What Bytecode Consulting helps you deliver."
+            copy="From AI adoption and automation to websites, cloud systems, and practical training, Bytecode Consulting helps growing organisations move forward with clear, commercially sensible technical support."
           />
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-            {serviceItems.map((service) => (
-              <Card key={service.title} className="flex h-full flex-col justify-between">
-                <div>
-                  <div className="mb-5 flex items-center gap-3">
-                    <span className="h-2.5 w-2.5 rounded-full bg-cyan" />
-                    <span className="h-px flex-1 bg-gradient-to-r from-cyan/60 to-transparent" />
-                  </div>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardCopy>{service.description}</CardCopy>
-                </div>
-                <a
-                  href="#contact"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 transition hover:translate-x-0.5 hover:text-cyan-200"
-                >
-                  <span>{service.cta}</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </Card>
-            ))}
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            <Card className="flex h-full flex-col justify-between">
+              <div>
+                <CardTitle>Services</CardTitle>
+                <CardCopy>
+                  AI consulting, cloud architecture, automation, internal tools, websites, software delivery, and ongoing technical advisory.
+                </CardCopy>
+              </div>
+              <Button href="/services" variant="secondary" className="mt-8 w-full justify-center">
+                View services
+              </Button>
+            </Card>
+            <Card className="flex h-full flex-col justify-between">
+              <div>
+                <CardTitle>Training</CardTitle>
+                <CardCopy>
+                  Business workshops, team mentoring, cloud fundamentals, AI awareness, and practical enablement sessions designed for adoption.
+                </CardCopy>
+              </div>
+              <Button href="/training" variant="secondary" className="mt-8 w-full justify-center">
+                View training
+              </Button>
+            </Card>
+            <Card className="flex h-full flex-col justify-between">
+              <div>
+                <CardTitle>Schools & Students</CardTitle>
+                <CardCopy>
+                  Accessible workshops and talks for education settings, helping students understand modern technology and future career pathways.
+                </CardCopy>
+              </div>
+              <Button href="/schools-students" variant="secondary" className="mt-8 w-full justify-center">
+                View schools offer
+              </Button>
+            </Card>
           </div>
         </div>
       </section>
 
-      <section id="training" className="section-divider py-20">
-        <div className="section-shell">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
-              <SectionHeading
-                eyebrow="Training"
-                title="Workshops and mentoring that make technology useful, not intimidating."
-                copy="Training is a core service. Sessions are designed to help businesses, schools, students, and delivery teams build confidence, reduce adoption friction, and improve practical capability."
-              />
-              <div className="mt-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-primary/20 via-white/5 to-purple/10 p-6">
-                <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">Training outcomes</p>
-                <div className="mt-5 flex flex-wrap gap-3 text-xs uppercase tracking-[0.24em] text-slate-300">
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Business workshops</span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Schools and students</span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Custom team sessions</span>
-                </div>
-                <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-200">
-                  <li>Build internal confidence across AI, cloud, and software delivery.</li>
-                  <li>Reduce friction when adopting new tools or workflows.</li>
-                  <li>Improve practical skills with hands-on, relevant exercises.</li>
-                  <li>Help teams apply AI and cloud services in sensible, business-ready ways.</li>
-                </ul>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Button href="#contact">Enquire about training</Button>
-                  <Button href="#contact" variant="secondary">
-                    Book a workshop
-                  </Button>
-                </div>
-              </div>
+      <section className="section-divider py-20">
+        <div className="section-shell grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <SectionHeading
+              eyebrow="Training"
+              title="Training remains a core service, not an afterthought."
+              copy="For businesses, local organisations, and education settings, the goal is the same: build confidence, reduce adoption friction, and make modern technology genuinely useful."
+            />
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Button href="/training">Training services</Button>
+              <Button href="/schools-students" variant="secondary">
+                Schools & student workshops
+              </Button>
             </div>
+          </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              {trainingItems.map((item) => (
-                <Card key={item.title}>
-                  <div className="mb-5 inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-cyan-200">
-                    Workshop
-                  </div>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardCopy>{item.description}</CardCopy>
-                </Card>
-              ))}
-            </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {trainingItems.slice(0, 4).map((item) => (
+              <Card key={item.title}>
+                <div className="mb-5 inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-cyan-200">
+                  Workshop
+                </div>
+                <CardTitle>{item.title}</CardTitle>
+                <CardCopy>{item.description}</CardCopy>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -171,48 +181,11 @@ export default function Home() {
       <section className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Why Bytecode"
-            title="A consultancy model built around clarity, capability, and practical results."
-            copy="The aim is not only to implement modern technology well, but to leave your organisation more confident and more capable afterwards."
-          />
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <Card className="overflow-hidden p-8">
-              <div className="grid gap-6 md:grid-cols-2">
-                {differentiators.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-                    <p className="text-sm leading-6 text-slate-200">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="flex h-full flex-col justify-between bg-gradient-to-b from-white/8 to-white/[0.03] p-8">
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">Delivery approach</p>
-                <h3 className="mt-4 text-2xl font-semibold text-white">Tailored for SMEs, local organisations, and growing teams.</h3>
-                <p className="mt-5 text-base leading-7 text-slate-300">
-                  You get senior-level engineering judgement, a pragmatic delivery pace, and a partner who treats enablement,
-                  mentoring, and documentation as part of the job rather than a handover afterthought.
-                </p>
-              </div>
-              <div className="mt-8 rounded-[1.75rem] border border-cyan/20 bg-cyan/10 p-5 text-sm leading-6 text-cyan-100">
-                Strong architecture matters, but so does helping people use what has been built. Bytecode Consulting is designed to do both.
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="process" className="section-divider py-20">
-        <div className="section-shell">
-          <SectionHeading
             eyebrow="Process"
-            title="A simple engagement model that keeps delivery moving."
-            copy="Clear phases, strong communication, and practical handover make it easier to move from idea to working capability."
+            title="A simple delivery model that keeps work practical and understandable."
+            copy="Whether the brief is AI enablement, cloud migration, software delivery, or training, the engagement stays clear and outcome-focused."
             align="center"
           />
-
           <div className="mt-12 grid gap-6 lg:grid-cols-4">
             {processSteps.map((step, index) => (
               <Card key={step.title} className="relative overflow-hidden">
@@ -226,87 +199,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="solutions" className="section-backdrop section-divider py-20">
+      <section className="py-20">
         <div className="section-shell">
-          <SectionHeading
-            eyebrow="Use Cases"
-            title="Example solutions that reflect the kind of work Bytecode Consulting can support."
-            copy="These are sample engagements rather than client claims, intended to show how consultancy, engineering, and training can combine into practical outcomes."
-          />
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {solutionItems.map((item) => (
-              <Card key={item.title}>
-                <div className="mb-5 text-[11px] uppercase tracking-[0.3em] text-slate-500">Example engagement</div>
-                <CardTitle>{item.title}</CardTitle>
-                <CardCopy>{item.description}</CardCopy>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="section-divider py-20">
-        <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-            <Card className="p-8">
-              <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">About</p>
-              <h2 className="mt-4 text-3xl font-semibold text-white">Founder-led, senior-level technical delivery.</h2>
-              <p className="mt-5 text-sm leading-7 text-slate-300">
-                Built for organisations that need thoughtful implementation, clear guidance, and a partner who can also help their people grow in confidence.
-              </p>
-            </Card>
-
-            <Card className="p-8">
-              <p className="text-base leading-8 text-slate-300">
-                Bytecode Consulting is built around modern engineering judgement, cloud-native thinking, and practical AI delivery.
-                The consultancy model is deliberately hands-on: solving business problems, improving technical capability, and helping teams
-                become more confident through mentoring, workshops, and strong implementation.
-              </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200">Senior engineering thinking</div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200">Modern cloud and AI delivery</div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-200">Capability building through training</div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-20">
-        <div className="section-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <SectionHeading
-                eyebrow="Contact"
-                title="Ready to plan your next project, platform, or workshop?"
-                copy="Start with a conversation about your goals, current constraints, and the most sensible next step. Consultancy, delivery, and training engagements are all welcome."
-              />
-
-              <div className="mt-8 rounded-[2rem] border border-cyan/20 bg-gradient-to-br from-cyan/10 via-white/5 to-transparent p-6">
-                <p className="text-sm uppercase tracking-[0.28em] text-cyan-200">Best fit engagements</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
-                  AI enablement, cloud migration, software delivery, automation projects, internal tools, and practical workshops for businesses or education settings.
+          <div className="glass-panel rounded-[2rem] p-8 sm:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div>
+                <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Ready to talk?</p>
+                <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+                  Let&apos;s plan the right next step for your business, team, or workshop.
+                </h2>
+                <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
+                  If you&apos;re in Dartford, Kent, London, or elsewhere in the UK, Bytecode Consulting can help you approach AI, cloud, software, and training in a way that is commercially sensible and technically strong.
                 </p>
               </div>
-
-              <div className="mt-10 space-y-5">
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                  <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Email</p>
-                  <p className="mt-2 text-lg text-white">admin@bytecodeconsulting.com</p>
-                </div>
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                  <p className="text-sm uppercase tracking-[0.28em] text-slate-400">LinkedIn</p>
-                  <p className="mt-2 text-lg text-white">linkedin.com/in/your-profile</p>
-                </div>
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                  <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Calendly</p>
-                  <p className="mt-2 text-lg text-white">calendly.com/your-handle</p>
-                </div>
-              </div>
+              <Button href="/contact">Contact Bytecode Consulting</Button>
             </div>
-
-            <ContactForm />
           </div>
         </div>
       </section>

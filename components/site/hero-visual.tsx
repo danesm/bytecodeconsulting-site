@@ -11,11 +11,11 @@ export function HeroVisual() {
         <div className="relative space-y-5">
           <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Delivery Focus</p>
-              <p className="mt-2 text-lg font-semibold text-white">Modern systems, practical outcomes</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Delivery Approach</p>
+              <p className="mt-2 text-lg font-semibold text-white">Modern engineering with practical business outcomes</p>
             </div>
             <div className="rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1 text-xs text-cyan-200">
-              AWS-grade thinking
+              Cloud & Mobile first thinking
             </div>
           </div>
 

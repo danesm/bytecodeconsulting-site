@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LogoMark } from "@/components/site/logo-mark";
 import { navItems } from "@/lib/site-content";
 
@@ -10,14 +11,15 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white">Bytecode Consulting</p>
             <p className="mt-1 text-sm text-slate-400">AI • Cloud • Software Engineering • Training</p>
+            <p className="mt-1 text-sm text-slate-500">Dartford, Kent • Supporting local and UK organisations</p>
           </div>
         </div>
 
         <div className="flex flex-wrap gap-5 text-sm text-slate-400">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="transition hover:text-white">
+            <Link key={item.href} href={item.href} className="transition hover:text-white">
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 

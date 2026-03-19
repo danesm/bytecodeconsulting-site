@@ -21,6 +21,14 @@ These colours are used to create a dark premium SaaS-style aesthetic with restra
 
 The project currently uses a clean sans-serif stack in code so it runs immediately after install. If you want a custom font later, add it in `app/layout.tsx` and update `tailwind.config.ts`.
 
+## Logo rationale
+
+The Bytecode Consulting logo is inspired by the intersection of software engineering and artificial intelligence.
+
+The outer brackets represent structured code, technical clarity, and engineering discipline. At the centre, the connected nodes symbolise intelligent systems, automation, and data-informed decision-making.
+
+Together, these elements reflect the consultancy's core approach: combining robust engineering foundations with modern AI thinking to deliver solutions that are practical, scalable, and commercially useful.
+
 ## Replacing the logo
 
 - Placeholder brand assets live in this folder:
