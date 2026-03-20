@@ -51,40 +51,43 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 lg:flex">
             <ThemeToggle />
             <Button href="/contact" className="hidden px-4 py-2.5 text-sm lg:inline-flex">
               Book a consultation
             </Button>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white lg:hidden"
-            onClick={() => setMobileOpen((value) => !value)}
-            aria-expanded={mobileOpen}
-            aria-label="Toggle navigation menu"
-          >
-            {mobileOpen ? (
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
-                <path
-                  d="M6 6l12 12M18 6 6 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
-                <path
-                  d="M4 7h16M4 12h16M4 17h16"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            )}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white"
+              onClick={() => setMobileOpen((value) => !value)}
+              aria-expanded={mobileOpen}
+              aria-label="Toggle navigation menu"
+            >
+              {mobileOpen ? (
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <path
+                    d="M6 6l12 12M18 6 6 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 7h16M4 12h16M4 17h16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {mobileOpen ? (
