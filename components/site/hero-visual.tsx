@@ -10,22 +10,25 @@ export function HeroVisual() {
         <div className="absolute -right-12 top-20 h-32 w-32 rounded-full border border-cyan/20 bg-cyan/10 blur-2xl" />
         <div className="relative space-y-5">
           <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-            <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Our Engineering Standards</p>
-            <p className="mt-3 text-sm leading-6 text-slate-200">
-              Secure, scalable, and maintainable engineering practices built into every delivery.
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-xs sm:tracking-[0.28em] sm:text-slate-400">
+              Our Engineering Standards
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Secure Applications</p>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-xs sm:tracking-[0.28em] sm:text-slate-400">
+                Secure Applications
+              </p>
+              <p className="mt-3 text-base leading-7 text-slate-200 sm:text-sm sm:leading-6">
                 Security-conscious development for websites, internal tools, and business systems.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Analytics & Insight</p>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-xs sm:tracking-[0.28em] sm:text-slate-400">
+                Analytics & Insight
+              </p>
+              <p className="mt-3 text-base leading-7 text-slate-200 sm:text-sm sm:leading-6">
                 Clear reporting and usage visibility to support better decisions.
               </p>
             </div>
@@ -33,14 +36,18 @@ export function HeroVisual() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Monitoring Dashboards</p>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-xs sm:tracking-[0.28em] sm:text-slate-400">
+                Monitoring Dashboards
+              </p>
+              <p className="mt-3 text-base leading-7 text-slate-200 sm:text-sm sm:leading-6">
                 Clear monitoring dashboards and operational visibility that help systems stay reliable.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Automated Testing</p>
-              <p className="mt-3 text-sm leading-6 text-slate-200">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-xs sm:tracking-[0.28em] sm:text-slate-400">
+                Automated Testing
+              </p>
+              <p className="mt-3 text-base leading-7 text-slate-200 sm:text-sm sm:leading-6">
                 Quality checks and delivery discipline that reduce regressions and improve confidence.
               </p>
             </div>
@@ -48,12 +55,20 @@ export function HeroVisual() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">Pay as you go IT infrastructure</p>
-              <p className="mt-2 text-sm font-medium text-slate-100">Flexible cloud setup aligned to business usage and cost control.</p>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-[11px] sm:tracking-[0.28em] sm:text-slate-500">
+                Pay as you go IT infrastructure
+              </p>
+              <p className="mt-2 text-base font-medium leading-7 text-slate-100 sm:text-sm sm:leading-6">
+                Flexible cloud setup aligned to business usage and cost control.
+              </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-slate-500">Self-managed IT infrastructure</p>
-              <p className="mt-2 text-sm font-medium text-slate-100">Modern platforms your team can operate confidently with the right structure and handover.</p>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-slate-300 sm:text-[11px] sm:tracking-[0.28em] sm:text-slate-500">
+                Self-managed IT infrastructure
+              </p>
+              <p className="mt-2 text-base font-medium leading-7 text-slate-100 sm:text-sm sm:leading-6">
+                Modern platforms your team can operate confidently with the right structure and handover.
+              </p>
             </div>
           </div>
 

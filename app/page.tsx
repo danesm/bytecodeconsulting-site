@@ -15,7 +15,7 @@ export default function Home() {
     <main id="top" className="overflow-x-hidden">
       <Navbar />
 
-      <section className="section-divider relative overflow-hidden pb-20 pt-40 sm:pb-24 sm:pt-48">
+      <section className="section-divider relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-40">
         <div className="absolute inset-0 -z-10">
           <div className="absolute left-[10%] top-20 h-72 w-72 rounded-full bg-primary/20 blur-[120px]" />
           <div className="absolute right-[12%] top-28 h-96 w-96 rounded-full bg-cyan/10 blur-[150px]" />
@@ -25,7 +25,7 @@ export default function Home() {
         <div className="section-shell grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-3xl">
             <div className="inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-200">
-              AI Enablement . Cloud . Software Development . Training
+              AI Enablement . Cloud . Software Development
             </div>
             <h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Use AI, cloud, and modern software to <span className="text-gradient">move faster and stay future-ready</span>.

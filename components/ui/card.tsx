@@ -19,9 +19,9 @@ export function Card({ className, children }: CardProps) {
 }
 
 export function CardTitle({ className, children }: CardProps) {
-  return <h3 className={cn("text-xl font-semibold text-white", className)}>{children}</h3>;
+  return <h3 className={cn("text-[1.375rem] font-bold leading-8 text-white sm:text-xl sm:leading-7", className)}>{children}</h3>;
 }
 
 export function CardCopy({ className, children }: CardProps) {
-  return <p className={cn("mt-3 text-sm leading-6 text-slate-300", className)}>{children}</p>;
+  return <p className={cn("mt-3 text-base leading-7 text-slate-300 sm:text-sm sm:leading-6", className)}>{children}</p>;
 }
