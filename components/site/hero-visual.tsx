@@ -9,8 +9,11 @@ export function HeroVisual() {
         <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyan/70 to-transparent" />
         <div className="absolute -right-12 top-20 h-32 w-32 rounded-full border border-cyan/20 bg-cyan/10 blur-2xl" />
         <div className="relative space-y-5">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+          <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
             <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Our Engineering Standards</p>
+            <p className="mt-3 text-sm leading-6 text-slate-200">
+              Secure, scalable, and maintainable engineering practices built into every delivery.
+            </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">

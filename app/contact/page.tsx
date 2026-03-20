@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { ContactDetails } from "@/components/site/contact-details";
 import { ContactForm } from "@/components/site/contact-form";
 import { Footer } from "@/components/site/footer";
 import { PageHero } from "@/components/site/page-hero";
-import { SectionHeading } from "@/components/site/section-heading";
 import { buildMetadata } from "@/lib/seo";
 
 const Navbar = dynamic(() => import("@/components/site/navbar").then((mod) => mod.Navbar), { ssr: false });
@@ -23,27 +21,22 @@ export default function ContactPage() {
       <Navbar />
       <PageHero
         eyebrow="Contact"
-        title="Ready to plan your next project, workshop, or technical improvement?"
-        copy="Start with a conversation about your goals, your current constraints, and the most sensible next step. Consultancy, delivery, training, and school workshop enquiries are all welcome."
+        title="Let’s plan the right next step"
+        copy=""
       />
 
-      <section className="py-20">
-        <div className="section-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <SectionHeading eyebrow="Get In Touch" title="Start your enquiry." copy="Share a few details and we’ll get back to you with the next step." />
-              <div className="mt-8 rounded-[2rem] border border-cyan/20 bg-gradient-to-br from-cyan/10 via-white/5 to-transparent p-6">
-                <p className="text-sm uppercase tracking-[0.28em] text-cyan-200">Best fit engagements</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
-                  AI enablement, cloud migration, software delivery, automation projects, internal tools, business training, and schools & student workshops.
-                </p>
-              </div>
-              <div className="mt-10">
-                <ContactDetails />
-              </div>
-            </div>
-
-            <ContactForm />
+      <section className="pb-20 pt-10 sm:pt-12">
+        <div className="section-shell max-w-3xl">
+          <ContactForm />
+          <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/5 p-6 text-center">
+            <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Or</p>
+            <p className="mt-4 text-sm leading-7 text-slate-300">Prefer to email directly?</p>
+            <a
+              href="mailto:admin@bytecodeconsulting.com"
+              className="mt-4 inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:border-cyan/40 hover:bg-cyan/15"
+            >
+              admin@bytecodeconsulting.com
+            </a>
           </div>
         </div>
       </section>
