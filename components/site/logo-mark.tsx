@@ -10,6 +10,7 @@ export function LogoMark({ className }: LogoMarkProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
+      style={{ transform: "scale(var(--logo-scale, 1))", transformOrigin: "center" }}
     >
       <rect x="8" y="8" width="80" height="80" rx="24" fill="var(--logo-surface, #0F172A)" />
       <path

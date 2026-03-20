@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { LogoMark } from "@/components/site/logo-mark";
-import { navItems } from "@/lib/site-content";
 
 export function Footer() {
   return (
@@ -15,13 +13,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-5 text-sm text-slate-400">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-white">
-              {item.label}
-            </Link>
-          ))}
-        </div>
+        <a
+          href="mailto:admin@bytecodeconsulting.com"
+          className="text-sm text-slate-400 transition hover:text-white"
+        >
+          admin@bytecodeconsulting.com
+        </a>
 
         <p className="text-sm text-slate-500">© {new Date().getFullYear()} Bytecode Consulting. All rights reserved.</p>
       </div>
