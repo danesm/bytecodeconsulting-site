@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Footer } from "@/components/site/footer";
-import { Navbar } from "@/components/site/navbar";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Card } from "@/components/ui/card";
 import { differentiators, localPositioning } from "@/lib/site-content";
 import { buildMetadata } from "@/lib/seo";
+
+const Navbar = dynamic(() => import("@/components/site/navbar").then((mod) => mod.Navbar), { ssr: false });
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
@@ -21,8 +23,8 @@ export default function AboutPage() {
       <Navbar />
       <PageHero
         eyebrow="About"
-        title="Founder-led, senior-level technical delivery with a practical teaching mindset."
-        copy="Bytecode Consulting is built around modern engineering judgement, cloud-native thinking, and AI delivery that serves real business goals. The aim is not just implementation, but capability building too."
+        title="Practical technical delivery with modern AI, cloud, software, and training capability."
+        copy="Bytecode Consulting brings together senior engineering judgement, practical implementation, and clear enablement to help organisations improve systems, reduce friction, and use modern technology well."
         primaryCta={{ label: "Contact us", href: "/contact" }}
       />
 
@@ -39,24 +41,12 @@ export default function AboutPage() {
             </div>
           </Card>
           <Card className="p-8">
-            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Working principle</p>
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">How Bytecode works</p>
             <blockquote className="mt-5 text-2xl italic leading-9 text-white sm:text-3xl sm:leading-[1.45]">
-              “Good technology should reduce friction, strengthen capability, and make the business easier to run.”
+              “The right technology should solve real operational problems, support growth, and be practical for your team to use.”
             </blockquote>
             <p className="mt-6 text-sm leading-7 text-slate-300">
-              Bytecode Consulting focuses on practical implementation, stronger systems, and confident adoption rather than technology for its own sake.
-            </p>
-          </Card>
-        </div>
-      </section>
-
-      <section className="section-divider py-20">
-        <div className="section-shell">
-          <Card className="p-8">
-            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Brand philosophy</p>
-            <h2 className="mt-4 text-3xl font-semibold text-white">A visual identity shaped around engineering clarity and modern intelligence.</h2>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">
-              Bytecode Consulting&apos;s visual identity reflects the blend of structured engineering discipline and modern AI thinking at the heart of the business, pairing clear technical foundations with connected intelligence and practical innovation.
+              Bytecode Consulting focuses on clear implementation, better systems, and sensible adoption so organisations get useful outcomes rather than unnecessary complexity.
             </p>
           </Card>
         </div>

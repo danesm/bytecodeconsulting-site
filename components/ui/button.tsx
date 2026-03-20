@@ -38,8 +38,16 @@ export function Button(props: ButtonLinkProps | ButtonActionProps) {
   const content = (
     <>
       <span>{props.children}</span>
-      <span aria-hidden="true" className="text-base leading-none transition-transform duration-300 group-hover:translate-x-0.5">
-        →
+      <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-0.5">
+        <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none">
+          <path
+            d="M4 10h11M10.5 4.5 16 10l-5.5 5.5"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </span>
     </>
   );

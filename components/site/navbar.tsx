@@ -19,6 +19,8 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const headerNavItems = navItems.filter((item) => item.href !== "/schools-students");
+
   return (
     <header
       className={cn(
@@ -34,7 +36,7 @@ export function Navbar() {
       >
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3.5">
-            <LogoMark className="h-12 w-12 sm:h-16 sm:w-16" />
+            <LogoMark className="h-14 w-14 sm:h-20 sm:w-20" />
             <div>
               <div className="text-sm font-semibold tracking-[0.2em] text-white">BYTECODE</div>
               <div className="text-xs uppercase tracking-[0.32em] text-slate-400">Consulting</div>
@@ -42,16 +44,16 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            {navItems.map((item) => (
+            {headerNavItems.map((item) => (
               <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition hover:text-white">
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button href="/contact" className="px-4 py-2.5 text-sm">
+            <Button href="/contact" className="hidden px-4 py-2.5 text-sm lg:inline-flex">
               Book a consultation
             </Button>
           </div>
@@ -63,13 +65,31 @@ export function Navbar() {
             aria-expanded={mobileOpen}
             aria-label="Toggle navigation menu"
           >
-            <span className="text-lg leading-none">{mobileOpen ? "×" : "☰"}</span>
+            {mobileOpen ? (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                <path
+                  d="M6 6l12 12M18 6 6 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
           </button>
         </div>
 
         {mobileOpen ? (
           <div className="mt-4 grid gap-3 rounded-[1.5rem] border border-white/10 bg-[var(--surface-strong)] p-4 shadow-panel backdrop-blur-xl lg:hidden">
-            {navItems.map((item) => (
+            {headerNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -79,9 +99,6 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <div className="flex justify-start">
-              <ThemeToggle />
-            </div>
             <Button href="/contact" className="w-full justify-center">
               Book a consultation
             </Button>

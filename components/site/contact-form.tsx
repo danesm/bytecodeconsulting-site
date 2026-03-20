@@ -53,11 +53,6 @@ export function ContactForm() {
         <input type="hidden" name="from_name" value="Bytecode Consulting Website" />
         <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
-        <div className="rounded-2xl border border-cyan/20 bg-cyan/10 px-4 py-3">
-          <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200">Send enquiry</p>
-          <p className="mt-2 text-sm leading-6 text-slate-300">Tell us a little about the project, training need, or workshop you have in mind.</p>
-        </div>
-
         <div className="grid gap-5 md:grid-cols-2">
           <label className="grid gap-2 text-sm text-slate-300">
             Your name
@@ -133,7 +128,7 @@ export function ContactForm() {
 
         <div className="flex flex-col gap-4 border-t border-white/10 pt-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm leading-6 text-slate-400">
-            Send an enquiry and we&apos;ll get back to you with the next step.
+            Send an enquiry and we&apos;ll get back to you within 24 hours.
           </p>
           <Button type="submit" className={isSubmitting ? "pointer-events-none opacity-70" : ""}>
             {isSubmitting ? "Sending enquiry" : "Send enquiry"}
