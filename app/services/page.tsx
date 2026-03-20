@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { Footer } from "@/components/site/footer";
-import { Navbar } from "@/components/site/navbar";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import { processSteps, serviceItems, solutionItems } from "@/lib/site-content";
 import { buildMetadata } from "@/lib/seo";
+
+const Navbar = dynamic(() => import("@/components/site/navbar").then((mod) => mod.Navbar), { ssr: false });
 
 export const metadata: Metadata = buildMetadata({
   title: "Services",

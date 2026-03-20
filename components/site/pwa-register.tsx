@@ -8,15 +8,21 @@ export function PwaRegister() {
       return;
     }
 
-    const register = async () => {
+    const syncServiceWorkers = async () => {
       try {
+        if (process.env.NODE_ENV !== "production") {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map((registration) => registration.unregister()));
+          return;
+        }
+
         await navigator.serviceWorker.register("/sw.js");
       } catch {
         // Non-blocking enhancement; ignore registration failures.
       }
     };
 
-    void register();
+    void syncServiceWorkers();
   }, []);
 
   return null;

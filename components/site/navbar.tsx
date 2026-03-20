@@ -19,6 +19,8 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const headerNavItems = navItems.filter((item) => item.href !== "/schools-students");
+
   return (
     <header
       className={cn(
@@ -42,7 +44,7 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            {navItems.map((item) => (
+            {headerNavItems.map((item) => (
               <Link key={item.href} href={item.href} className="text-sm text-slate-300 transition hover:text-white">
                 {item.label}
               </Link>
@@ -63,13 +65,31 @@ export function Navbar() {
             aria-expanded={mobileOpen}
             aria-label="Toggle navigation menu"
           >
-            <span className="text-lg leading-none">{mobileOpen ? "×" : "☰"}</span>
+            {mobileOpen ? (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                <path
+                  d="M6 6l12 12M18 6 6 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
           </button>
         </div>
 
         {mobileOpen ? (
           <div className="mt-4 grid gap-3 rounded-[1.5rem] border border-white/10 bg-[var(--surface-strong)] p-4 shadow-panel backdrop-blur-xl lg:hidden">
-            {navItems.map((item) => (
+            {headerNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

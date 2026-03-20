@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
 import { Footer } from "@/components/site/footer";
 import { HeroVisual } from "@/components/site/hero-visual";
-import { Navbar } from "@/components/site/navbar";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import {
   localPositioning,
 } from "@/lib/site-content";
+
+const Navbar = dynamic(() => import("@/components/site/navbar").then((mod) => mod.Navbar), { ssr: false });
 
 export default function Home() {
   return (
