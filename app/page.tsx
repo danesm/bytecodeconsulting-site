@@ -27,21 +27,17 @@ export default function Home() {
         <div className="section-shell grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-3xl">
             <div className="inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-200">
-              Practical AI, cloud, software, and training for growing organisations
+              AI Enablement . Cloud . Software Development . Training
             </div>
             <h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Use AI, cloud, and modern software to <span className="text-gradient">move your business forward with confidence</span>.
+              Use AI, cloud, and modern software to <span className="text-gradient">move faster and stay future-ready</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Bytecode Consulting helps growing businesses use AI intelligence, cloud, and modern software to reduce manual work, improve service,
-              and move forward with confidence.
+              Bytecode Consulting helps growing businesses and organisations reduce manual work, build better digital systems, and adopt AI in a practical, cost-conscious way.
             </p>
             <p className="mt-4 max-w-2xl text-base italic leading-7 text-slate-400">
-              Practical delivery, sensible pricing, and training designed for real-world use.
+              Clear delivery, sensible pricing, and training that helps your team use the technology with confidence.
             </p>
-            <blockquote className="mt-5 max-w-2xl text-lg italic leading-8 text-cyan-100 sm:text-xl">
-              “The question is no longer whether AI matters, but how to apply it in a practical, cost-conscious way.”
-            </blockquote>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button href="/contact">Book a consultation</Button>
               <Button href="/services" variant="secondary">
@@ -50,13 +46,13 @@ export default function Home() {
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
-                "Reduce repetitive work with AI, automation, and intelligent website chatbots",
-                "Modern websites, cloud systems, and internal tools for growing businesses",
-                "Starter AI-enabled websites from £99. Optional support from £19.99 per month",
+                "Reduce repetitive work with AI, automation, and website chatbots",
+                "Modernise back-office systems and improve business processes",
+                "AI-enabled websites starting from £99.00, with optional support from £9.99 per month for individuals or small businesses",
               ].map((item, index) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base font-medium leading-7 text-slate-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:text-sm sm:font-normal sm:leading-6 sm:text-slate-300"
                 >
                   <div
                     className="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-primary via-cyan to-purple"

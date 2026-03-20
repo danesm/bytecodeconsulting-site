@@ -49,9 +49,9 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button href="/contact" className="px-4 py-2.5 text-sm">
+            <Button href="/contact" className="hidden px-4 py-2.5 text-sm lg:inline-flex">
               Book a consultation
             </Button>
           </div>
@@ -79,9 +79,6 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <div className="flex justify-start">
-              <ThemeToggle />
-            </div>
             <Button href="/contact" className="w-full justify-center">
               Book a consultation
             </Button>
