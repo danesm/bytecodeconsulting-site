@@ -5,11 +5,7 @@ import { SectionHeading } from "@/components/site/section-heading";
 import { Button } from "@/components/ui/button";
 import { Card, CardCopy, CardTitle } from "@/components/ui/card";
 import {
-  credibilityItems,
   localPositioning,
-  processSteps,
-  serviceItems,
-  trainingItems,
 } from "@/lib/site-content";
 
 export default function Home() {
@@ -17,7 +13,7 @@ export default function Home() {
     <main id="top" className="overflow-x-hidden">
       <Navbar />
 
-      <section className="section-divider relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-40">
+      <section className="section-divider relative overflow-hidden pb-20 pt-40 sm:pb-24 sm:pt-48">
         <div className="absolute inset-0 -z-10">
           <div className="absolute left-[10%] top-20 h-72 w-72 rounded-full bg-primary/20 blur-[120px]" />
           <div className="absolute right-[12%] top-28 h-96 w-96 rounded-full bg-cyan/10 blur-[150px]" />
@@ -78,26 +74,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-divider py-20">
-        <div className="section-shell">
-          <SectionHeading
-            eyebrow="Credibility"
-            title="Enterprise-grade engineering, delivered in a practical way."
-            copy="Bytecode Consulting combines senior technical thinking with the responsiveness of a boutique partner. The result is delivery that is capable, measured, and grounded in outcomes your organisation can actually use."
-          />
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            {credibilityItems.map((item) => (
-              <Card key={item.title}>
-                <div className="mb-5 h-1 w-14 rounded-full bg-gradient-to-r from-primary via-cyan to-purple" />
-                <CardTitle>{item.title}</CardTitle>
-                <CardCopy>{item.description}</CardCopy>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
@@ -140,57 +116,6 @@ export default function Home() {
                 View schools offer
               </Button>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-divider py-20">
-        <div className="section-shell grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div>
-            <SectionHeading
-              eyebrow="Training"
-              title="Training remains a core service, not an afterthought."
-              copy="For businesses, local organisations, and education settings, the goal is the same: build confidence, reduce adoption friction, and make modern technology genuinely useful."
-            />
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button href="/training">Training services</Button>
-              <Button href="/schools-students" variant="secondary">
-                Schools & student workshops
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {trainingItems.slice(0, 4).map((item) => (
-              <Card key={item.title}>
-                <div className="mb-5 inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-cyan-200">
-                  Workshop
-                </div>
-                <CardTitle>{item.title}</CardTitle>
-                <CardCopy>{item.description}</CardCopy>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-backdrop section-divider py-20">
-        <div className="section-shell">
-          <SectionHeading
-            eyebrow="Process"
-            title="A simple delivery model that keeps work practical and understandable."
-            copy="Whether the brief is AI enablement, cloud migration, software delivery, or training, the engagement stays clear and outcome-focused."
-            align="center"
-          />
-          <div className="mt-12 grid gap-6 lg:grid-cols-4">
-            {processSteps.map((step, index) => (
-              <Card key={step.title} className="relative overflow-hidden">
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-cyan to-purple" />
-                <div className="absolute right-6 top-6 text-4xl font-semibold text-white/10">0{index + 1}</div>
-                <CardTitle>{step.title}</CardTitle>
-                <CardCopy>{step.description}</CardCopy>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
