@@ -20,7 +20,7 @@ export function Footer() {
           admin@bytecodeconsulting.com
         </a>
 
-        <p className="text-sm text-slate-500">© {new Date().getFullYear()} Bytecode Consulting. All rights reserved.</p>
+        <p className="text-sm text-slate-500">© {new Date().getFullYear()} Bytecode Consulting Ltd. All rights reserved.</p>
       </div>
     </footer>
   );
