@@ -17,56 +17,57 @@ export default function Home() {
       subtitle: "AWS Cloud",
       logoSrc: "/tool-logos/anthropic.png",
       logoAlt: "AWS logo",
-      logoClassName: "h-10 w-auto",
+      logoClassName: "h-7 w-auto sm:h-8",
       logoSurfaceClassName: "bg-white",
     },
     {
       label: "Google Cloud",
       logoSrc: "https://www.gstatic.com/cgc/google-cloud-logo.svg",
       logoAlt: "Google Cloud logo",
-      logoClassName: "h-9 w-auto",
+      logoClassName: "h-7 w-auto sm:h-8",
       logoSurfaceClassName: "bg-white",
     },
     {
       label: "React / Next.js",
       logoSrc: "/tool-logos/nextjs-react.png",
       logoAlt: "React and Next.js logo",
-      logoClassName: "h-12 w-auto",
+      logoClassName: "h-9 w-auto sm:h-10",
       logoSurfaceClassName: "bg-white",
     },
     {
       label: "Terraform",
       logoSrc: "/tool-logos/terraform.svg",
       logoAlt: "Terraform logo",
-      logoClassName: "h-10 w-auto",
+      logoClassName: "h-7 w-auto sm:h-8",
     },
     {
       label: "OpenAI",
       subtitle: "Codex",
       logoSrc: "/tool-logos/openai-logo.jpg",
       logoAlt: "OpenAI logo",
-      logoClassName: "h-12 w-auto",
+      logoClassName: "h-9 w-auto sm:h-10",
       logoSurfaceClassName: "bg-white",
     },
     {
       label: "Anthropic",
       subtitle: "Claude",
-      logoSrc: "/tool-logos/aws.png",
+      logoSrc: "/tool-logos/anthropic-logo.webp",
       logoAlt: "Anthropic logo",
-      logoClassName: "h-10 w-auto",
+      logoClassName: "h-8 w-auto sm:h-9",
+      logoSurfaceClassName: "bg-white",
     },
     {
       label: "Figma",
       logoSrc: "https://cdn.sanity.io/images/599r6htc/regionalized/5094051dac77593d0f0978bdcbabaf79e5bb855c-1080x1080.png?auto=format&fit=max&h=540&q=75&w=540",
       logoAlt: "Figma logo",
-      logoClassName: "h-10 w-10",
+      logoClassName: "h-7 w-7 sm:h-8 sm:w-8",
       logoSurfaceClassName: "bg-white",
     },
     {
       label: "Kiro",
       logoSrc: "https://kiro.dev/images/kiro-wordmark.png?h=0ad65a93",
       logoAlt: "Kiro wordmark",
-      logoClassName: "h-8 w-auto",
+      logoClassName: "h-6 w-auto sm:h-7",
     },
   ];
 
@@ -159,39 +160,42 @@ export default function Home() {
 
       <section className="section-backdrop section-divider py-20">
         <div className="section-shell">
-          <SectionHeading
-            eyebrow="Tools & Technologies"
-            title="Using modern platforms and AI tools to deliver practical outcomes."
-            copy="Bytecode Consulting works with leading cloud, software, and AI platforms to help organisations modernise confidently, ship efficiently, and adopt the right technology for the job."
-          />
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:p-10">
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Tools & Technologies</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+              Using modern platforms and AI tools to deliver practical outcomes.
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
+              Bytecode Consulting works with leading cloud, software, and AI platforms to help organisations modernise confidently, ship efficiently, and adopt the right technology for the job.
+            </p>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {technologyItems.map((item) => (
-              <div
-                key={item.label}
-                className="flex min-h-28 flex-col items-center justify-center rounded-[1.5rem] border border-white/10 bg-white/[0.04] px-5 py-5 text-center text-base font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
-              >
-                {item.logoSrc ? (
-                  <div
-                    className={`flex min-h-14 items-center justify-center rounded-2xl px-4 py-3 ${
-                      item.logoSurfaceClassName ?? "bg-transparent"
-                    }`}
-                  >
-                    <img
-                      src={item.logoSrc}
-                      alt={item.logoAlt}
-                      className={item.logoClassName}
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <div className="rounded-2xl border border-cyan/20 bg-cyan/10 px-4 py-2 text-sm uppercase tracking-[0.2em] text-cyan-100">
-                    {item.label}
-                  </div>
-                )}
-                <div className="mt-3 text-sm font-medium text-slate-300">{item.subtitle ?? item.label}</div>
-              </div>
-            ))}
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {technologyItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex min-h-16 items-center justify-center rounded-[1.15rem] border border-white/8 bg-slate-950/25 px-2.5 py-2.5 sm:min-h-18 sm:px-3 sm:py-3"
+                >
+                  {item.logoSrc ? (
+                    <div
+                      className={`flex min-h-8 items-center justify-center rounded-[1rem] px-2 py-1.5 sm:min-h-10 sm:px-2.5 ${
+                        item.logoSurfaceClassName ?? "bg-transparent"
+                      }`}
+                    >
+                      <img
+                        src={item.logoSrc}
+                        alt={item.logoAlt}
+                        className={item.logoClassName}
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="rounded-2xl border border-cyan/20 bg-cyan/10 px-4 py-2 text-sm uppercase tracking-[0.2em] text-cyan-100">
+                      {item.label}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
