@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { PwaRegister } from "@/components/site/pwa-register";
+import { WebMcpTools } from "@/components/site/webmcp-tools";
 import { buildMetadata, siteSeo } from "@/lib/seo";
 import "./globals.css";
 
@@ -155,6 +156,7 @@ export default function RootLayout({
       </head>
       <body className={manrope.variable}>
         <PwaRegister />
+        <WebMcpTools />
         {children}
       </body>
     </html>

@@ -30,6 +30,10 @@ The exported static site will be generated in `out/`.
 ## Key edit points
 
 - Main homepage content: `app/page.tsx`
+- News listing page: `app/news/page.tsx`
+- News article page template: `app/news/[slug]/page.tsx`
+- News content index: `lib/news/index.ts`
+- News post files: `lib/news/posts/`
 - Proposal template: `app/proposal/page.tsx`
 - Training brochure: `app/training-brochure/page.tsx`
 - Shared content arrays: `lib/site-content.ts`
@@ -37,7 +41,20 @@ The exported static site will be generated in `out/`.
 - Global colours and visual styling: `app/globals.css`
 - Tailwind theme tokens: `tailwind.config.ts`
 - Brand assets: `public/brand/`
+- News images: `public/news/`
 - Custom domain for GitHub Pages: `public/CNAME`
+
+## Adding a news article
+
+Use the file-based workflow below to add a new news post quickly:
+
+1. Copy `lib/news/posts/_template.ts`
+2. Rename it to match the new article slug
+3. Update the content fields in the copied file
+4. Import the new post into `lib/news/index.ts`
+5. Add the article image under `public/news/`
+
+This keeps the news section simple, fast, and easy to maintain without introducing a CMS.
 
 ## GitHub Pages notes
 

@@ -9,6 +9,7 @@ type BuildMetadataInput = {
   description: string;
   path: string;
   keywords?: string[];
+  image?: string;
 };
 
 export function buildMetadata({
@@ -16,8 +17,10 @@ export function buildMetadata({
   description,
   path,
   keywords = [],
+  image,
 }: BuildMetadataInput): Metadata {
   const url = `${siteUrl}${path}`;
+  const socialImage = image ?? defaultImage;
 
   return {
     title,
@@ -35,7 +38,7 @@ export function buildMetadata({
       type: "website",
       images: [
         {
-          url: defaultImage,
+          url: socialImage,
           width: 1584,
           height: 396,
           alt: "Bytecode Consulting brand banner",
@@ -46,7 +49,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title: `${title} | ${siteName}`,
       description,
-      images: [defaultImage],
+      images: [socialImage],
     },
   };
 }
