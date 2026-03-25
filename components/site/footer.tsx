@@ -26,7 +26,6 @@ export function Footer() {
                 <p className="mt-1 text-sm text-slate-400">
                   AI • Cloud • Software Delivery • Training
                 </p>
-                <p className="mt-1 text-sm text-slate-500">Dartford, Kent • Working with organisations across the UK and beyond</p>
               </div>
             </div>
           </div>
