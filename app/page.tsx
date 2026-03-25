@@ -11,6 +11,65 @@ import {
 const Navbar = dynamic(() => import("@/components/site/navbar").then((mod) => mod.Navbar), { ssr: false });
 
 export default function Home() {
+  const technologyItems = [
+    {
+      label: "AWS",
+      subtitle: "AWS Cloud",
+      logoSrc: "/tool-logos/anthropic.png",
+      logoAlt: "AWS logo",
+      logoClassName: "h-10 w-auto",
+      logoSurfaceClassName: "bg-white",
+    },
+    {
+      label: "Google Cloud",
+      logoSrc: "https://www.gstatic.com/cgc/google-cloud-logo.svg",
+      logoAlt: "Google Cloud logo",
+      logoClassName: "h-9 w-auto",
+      logoSurfaceClassName: "bg-white",
+    },
+    {
+      label: "React / Next.js",
+      logoSrc: "/tool-logos/nextjs-react.png",
+      logoAlt: "React and Next.js logo",
+      logoClassName: "h-12 w-auto",
+      logoSurfaceClassName: "bg-white",
+    },
+    {
+      label: "Terraform",
+      logoSrc: "/tool-logos/terraform.svg",
+      logoAlt: "Terraform logo",
+      logoClassName: "h-10 w-auto",
+    },
+    {
+      label: "OpenAI",
+      subtitle: "Codex",
+      logoSrc: "/tool-logos/openai-logo.jpg",
+      logoAlt: "OpenAI logo",
+      logoClassName: "h-12 w-auto",
+      logoSurfaceClassName: "bg-white",
+    },
+    {
+      label: "Anthropic",
+      subtitle: "Claude",
+      logoSrc: "/tool-logos/aws.png",
+      logoAlt: "Anthropic logo",
+      logoClassName: "h-10 w-auto",
+    },
+    {
+      label: "Figma",
+      logoSrc: "https://cdn.sanity.io/images/599r6htc/regionalized/5094051dac77593d0f0978bdcbabaf79e5bb855c-1080x1080.png?auto=format&fit=max&h=540&q=75&w=540",
+      logoAlt: "Figma logo",
+      logoClassName: "h-10 w-10",
+      logoSurfaceClassName: "bg-white",
+    },
+    {
+      label: "Kiro",
+      logoSrc: "https://kiro.dev/images/kiro-wordmark.png?h=0ad65a93",
+      logoAlt: "Kiro wordmark",
+      logoClassName: "h-8 w-auto",
+    },
+  ];
+
   return (
     <main id="top" className="overflow-x-hidden">
       <Navbar />
@@ -25,16 +84,16 @@ export default function Home() {
         <div className="section-shell grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-3xl">
             <div className="inline-flex rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-cyan-200">
-              AI Enablement . Cloud . Software Development
+              AI • Cloud • Software Delivery • Training
             </div>
             <h1 className="mt-8 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Use AI, cloud, and modern software to <span className="text-gradient">move faster and stay future-ready</span>.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Bytecode Consulting helps growing businesses and organisations reduce manual work, build better digital systems, and adopt AI in a practical, cost-conscious way.
+              Bytecode Consulting helps businesses adopt AI, modernise systems, and deliver better software so teams can work more efficiently and stay competitive.
             </p>
             <p className="mt-4 max-w-2xl text-base italic leading-7 text-slate-400">
-              Clear delivery, sensible pricing, and training that helps your team use the technology with confidence.
+              Faster delivery, sensible pricing, and training that helps your team use the technology with confidence.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button href="/contact">Book a consultation</Button>
@@ -44,9 +103,9 @@ export default function Home() {
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
-                "Reduce repetitive work with AI, automation, and website chatbots",
-                "Modernise back-office systems and improve business processes",
-                "AI-enabled websites starting from £99.00, with optional support from £9.99 per month for individuals or small businesses",
+                "Practical AI Adoption\nUse AI to improve workflows, service quality, and productivity.",
+                "Secure Cloud Modernization\nModernise platforms for resilience, security, flexibility, and cost control.",
+                "Software Delivery & Training\nDeliver secure, reliable software with the training teams need to use it confidently.",
               ].map((item, index) => (
                 <div
                   key={item}
@@ -56,7 +115,14 @@ export default function Home() {
                     className="mb-3 h-1 w-12 rounded-full bg-gradient-to-r from-primary via-cyan to-purple"
                     style={{ opacity: 0.8 - index * 0.12 }}
                   />
-                  {item}
+                  {item.split("\n").map((line, lineIndex) => (
+                    <div
+                      key={`${item}-${lineIndex}`}
+                      className={lineIndex === 0 ? "font-semibold text-white sm:text-base" : "mt-2"}
+                    >
+                      {line}
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
@@ -72,6 +138,21 @@ export default function Home() {
             <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">{localPositioning.eyebrow}</p>
             <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{localPositioning.title}</h2>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">{localPositioning.copy}</p>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6">
+                <p className="text-lg italic leading-8 text-white sm:text-xl">
+                  “Generative AI is going to reinvent virtually every customer experience we know.”
+                </p>
+                <p className="mt-4 text-sm uppercase tracking-[0.22em] text-slate-400">Andy Jassy, Amazon CEO</p>
+              </div>
+              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6">
+                <p className="text-lg italic leading-8 text-white sm:text-xl">
+                  “AI is the new electricity.”
+                </p>
+                <p className="mt-4 text-sm uppercase tracking-[0.22em] text-slate-400">Andrew Ng, Founder of DeepLearning.AI</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -79,17 +160,56 @@ export default function Home() {
       <section className="section-backdrop section-divider py-20">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Core Offers"
-            title="What Bytecode Consulting helps you deliver."
-            copy="From AI adoption and automation to websites, cloud systems, and practical training, Bytecode Consulting helps growing organisations move forward with clear, commercially sensible technical support."
+            eyebrow="Tools & Technologies"
+            title="Using modern platforms and AI tools to deliver practical outcomes."
+            copy="Bytecode Consulting works with leading cloud, software, and AI platforms to help organisations modernise confidently, ship efficiently, and adopt the right technology for the job."
+          />
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {technologyItems.map((item) => (
+              <div
+                key={item.label}
+                className="flex min-h-28 flex-col items-center justify-center rounded-[1.5rem] border border-white/10 bg-white/[0.04] px-5 py-5 text-center text-base font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+              >
+                {item.logoSrc ? (
+                  <div
+                    className={`flex min-h-14 items-center justify-center rounded-2xl px-4 py-3 ${
+                      item.logoSurfaceClassName ?? "bg-transparent"
+                    }`}
+                  >
+                    <img
+                      src={item.logoSrc}
+                      alt={item.logoAlt}
+                      className={item.logoClassName}
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="rounded-2xl border border-cyan/20 bg-cyan/10 px-4 py-2 text-sm uppercase tracking-[0.2em] text-cyan-100">
+                    {item.label}
+                  </div>
+                )}
+                <div className="mt-3 text-sm font-medium text-slate-300">{item.subtitle ?? item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-divider py-20">
+        <div className="section-shell">
+          <SectionHeading
+            eyebrow="How We Help"
+            title="A consultancy offer designed for practical outcomes."
+            copy="Whether you need a focused AI pilot, a cloud modernization roadmap, a working software product, or training that helps your team adopt the change, the emphasis stays on useful outcomes over unnecessary complexity."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             <Card className="flex h-full flex-col justify-between">
               <div>
-                <CardTitle>Services</CardTitle>
+                <CardTitle>AI & Cloud Consulting</CardTitle>
                 <CardCopy>
-                  AI consulting, cloud architecture, automation, internal tools, websites, software delivery, and ongoing technical advisory.
+                  Strategy, architecture, and delivery support for organisations that want to adopt AI sensibly and modernise with cloud-native approaches.
                 </CardCopy>
               </div>
               <Button href="/services" variant="secondary" className="mt-8 w-full justify-center">
@@ -98,24 +218,24 @@ export default function Home() {
             </Card>
             <Card className="flex h-full flex-col justify-between">
               <div>
-                <CardTitle>Training</CardTitle>
+                <CardTitle>Software Delivery</CardTitle>
                 <CardCopy>
-                  Business workshops, team mentoring, cloud fundamentals, AI awareness, and practical enablement sessions designed for adoption.
+                  Delivery of websites, internal tools, operational platforms, and modernization work with strong engineering discipline from day one.
                 </CardCopy>
               </div>
-              <Button href="/training" variant="secondary" className="mt-8 w-full justify-center">
-                View training
+              <Button href="/services" variant="secondary" className="mt-8 w-full justify-center">
+                Explore delivery
               </Button>
             </Card>
             <Card className="flex h-full flex-col justify-between">
               <div>
-                <CardTitle>Schools & Students</CardTitle>
+                <CardTitle>Training & Enablement</CardTitle>
                 <CardCopy>
-                  Accessible workshops and talks for education settings, helping students understand modern technology and future career pathways.
+                  Workshops, mentoring, and practical guidance that help business and technical teams understand the technology and use it well.
                 </CardCopy>
               </div>
-              <Button href="/schools-students" variant="secondary" className="mt-8 w-full justify-center">
-                View schools offer
+              <Button href="/training" variant="secondary" className="mt-8 w-full justify-center">
+                View training
               </Button>
             </Card>
           </div>
@@ -132,7 +252,7 @@ export default function Home() {
                   Let&apos;s plan the right next step for your business, team, or workshop.
                 </h2>
                 <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
-                  If you&apos;re in Dartford, Kent, London, or elsewhere in the UK, Bytecode Consulting can help you approach AI, cloud, software, and training in a way that is commercially sensible and technically strong.
+                  If you&apos;re in Dartford, Kent, London, or elsewhere in the UK, Bytecode Consulting can help you approach AI adoption, cloud modernization, software delivery, and training in a way that is commercially sensible and technically strong.
                 </p>
               </div>
               <Button href="/contact">Contact Bytecode Consulting</Button>

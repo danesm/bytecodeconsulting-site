@@ -7,10 +7,10 @@ export const navItems = [
 ];
 
 export const localPositioning = {
-  eyebrow: "Kent-Based Consultancy",
-  title: "Based in Dartford, supporting Kent, London, and UK organisations with practical technical delivery.",
+  eyebrow: "Why AI Adoption Matters",
+  title: "AI is becoming the engine for modern business.",
   copy:
-    "Bytecode Consulting is positioned to help local businesses and growing organisations adopt AI, automation, and cloud technology in ways that improve service quality, reduce manual overhead, and stay commercially sensible.",
+    "Businesses that adopt AI well will work faster, improve productivity, and stay more competitive. Bytecode Consulting helps organisations introduce AI in practical ways that support real operations and long-term capability.",
 };
 
 export const credibilityItems = [
@@ -19,20 +19,20 @@ export const credibilityItems = [
     description: "Practical AI adoption, experimentation support, workflow design, and internal capability building.",
   },
   {
-    title: "Cloud Architecture",
-    description: "Secure, scalable foundations for migrations, modernisation, and resilient service delivery.",
+    title: "Cloud Modernization",
+    description: "Cloud-native and serverless foundations for migration, modernization, resilience, and cost-aware delivery.",
   },
   {
-    title: "Automation & Internal Tools",
-    description: "Manual process reduction through smart workflows, dashboards, integrations, and operational tooling.",
+    title: "Software Delivery",
+    description: "Modern software engineering for websites, internal tools, platforms, and operational systems that teams can rely on.",
   },
   {
-    title: "Product Engineering",
-    description: "Clean web platforms, custom software, and delivery patterns that balance speed with maintainability.",
+    title: "Training & Adoption",
+    description: "Workshops, mentoring, and practical guidance that help teams understand the technology and use it confidently.",
   },
   {
-    title: "Training & Workshops",
-    description: "Modern, hands-on sessions for teams, schools, and communities that turn knowledge into action.",
+    title: "Cost-Effective Delivery",
+    description: "AI-accelerated delivery methods that reduce time to value while keeping human oversight and engineering quality in place.",
   },
 ];
 
@@ -126,13 +126,13 @@ export const schoolWorkshopItems = [
 ];
 
 export const differentiators = [
-  "Enterprise-grade engineering judgement applied with boutique consultancy focus.",
-  "Pragmatic delivery that meets small businesses and growing teams where they are.",
-  "Cloud-native architecture patterns designed for resilience, security, and scale.",
-  "AI-first thinking grounded in operational usefulness, not hype.",
+  "AI-enabled delivery focused on practical modernization rather than hype.",
+  "Cloud-native and serverless thinking applied in a cost-conscious way.",
+  "Software delivery capability that turns strategy into working systems.",
+  "Pragmatic engagement for small teams, growing businesses, and larger organisations.",
   "Hands-on teaching, mentoring, and enablement built into delivery.",
   "Access to strong offshore delivery partners, with 90+ developers across multiple locations for larger-scale project support.",
-  "Tailored solutions for SMEs, schools, startups, and established organisations.",
+  "Tailored solutions for SMEs, startups, established organisations, and public-facing teams.",
 ];
 
 export const processSteps = [
