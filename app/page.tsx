@@ -249,10 +249,10 @@ export default function Home() {
               <div>
                 <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Ready to talk?</p>
                 <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                  Let&apos;s plan the right next step for your business, team, or workshop.
+                  Let&apos;s plan the right next step.
                 </h2>
                 <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
-                  If you&apos;re in Dartford, Kent, London, or elsewhere in the UK, Bytecode Consulting can help you approach AI adoption, cloud modernization, software delivery, and training in a way that is commercially sensible and technically strong.
+                  If you&apos;re planning a new website, looking to automate repetitive processes, improve how your team handles enquiries, or introduce AI into day-to-day operations, Bytecode Consulting can help you move forward with clarity.
                 </p>
               </div>
               <Button href="/contact">Contact Bytecode Consulting</Button>

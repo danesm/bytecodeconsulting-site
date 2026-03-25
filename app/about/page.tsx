@@ -3,18 +3,37 @@ import dynamic from "next/dynamic";
 import { Footer } from "@/components/site/footer";
 import { PageHero } from "@/components/site/page-hero";
 import { SectionHeading } from "@/components/site/section-heading";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { differentiators, localPositioning } from "@/lib/site-content";
 import { buildMetadata } from "@/lib/seo";
 
 const Navbar = dynamic(() => import("@/components/site/navbar").then((mod) => mod.Navbar), { ssr: false });
 
+const workingPrinciples = [
+  {
+    title: "Practical Over Hype",
+    copy: "Technology choices should support real business outcomes, not add unnecessary complexity or fashionable noise.",
+  },
+  {
+    title: "Fast, Focused Delivery",
+    copy: "The goal is to create momentum quickly, keep priorities clear, and move from idea to useful outcome without wasting time.",
+  },
+  {
+    title: "Security-Conscious Thinking",
+    copy: "AI, cloud, and software delivery should be approached with care, good engineering habits, and sensible risk awareness from the start.",
+  },
+  {
+    title: "Adoption Matters",
+    copy: "Technology only creates value when people can use it confidently, which is why training and practical enablement are built into the approach.",
+  },
+];
+
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Learn about Bytecode Consulting, a Kent-based consultancy combining senior engineering thinking with practical AI, cloud, software, and training delivery.",
+    "Learn about Bytecode Consulting, a modern consultancy focused on practical AI adoption, cloud modernization, software delivery, and training.",
   path: "/about/",
-  keywords: ["About Bytecode Consulting", "Kent consultancy", "Dartford technology consultancy"],
+  keywords: ["About Bytecode Consulting", "AI consultancy", "cloud modernization consultancy"],
 });
 
 export default function AboutPage() {
@@ -23,30 +42,31 @@ export default function AboutPage() {
       <Navbar />
       <PageHero
         eyebrow="About"
-        title="Practical technical delivery with modern AI, cloud, software, and training capability."
-        copy="Bytecode Consulting brings together senior engineering judgement, practical implementation, and clear enablement to help organisations improve systems, reduce friction, and use modern technology well."
+        title="Practical AI, cloud, and software consulting for organisations ready to modernise."
+        copy="Bytecode Consulting helps organisations adopt AI, modernise systems, and deliver better software with a practical, commercially sensible approach to change."
         primaryCta={{ label: "Contact us", href: "/contact" }}
       />
 
       <section className="section-divider py-20">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Card className="p-8">
-            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Local roots</p>
-            <h2 className="mt-4 text-3xl font-semibold text-white">A Kent-based consultancy with a practical focus on local business value.</h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">{localPositioning.copy}</p>
-            <div className="mt-6 rounded-2xl border border-cyan/20 bg-cyan/10 p-6">
-              <p className="text-lg italic leading-8 text-cyan-50 sm:text-xl">
-                “AI should create operational value, not just excitement. The real advantage goes to organisations that apply it clearly, practically, and with purpose.”
-              </p>
-            </div>
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">What Bytecode is</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white">A modern consultancy focused on useful outcomes, not unnecessary complexity.</h2>
+            <p className="mt-5 text-base leading-8 text-slate-300">
+              Bytecode Consulting is an emerging consultancy built to help organisations make practical progress with AI, cloud, software delivery, and training.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-300">
+              The focus is not on oversized transformation language or overengineered solutions. It is on helping clients move forward with clarity, sensible technical choices, and delivery that supports real business needs.
+            </p>
           </Card>
           <Card className="p-8">
-            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">How Bytecode works</p>
-            <blockquote className="mt-5 text-2xl italic leading-9 text-white sm:text-3xl sm:leading-[1.45]">
-              “The right technology should solve real operational problems, support growth, and be practical for your team to use.”
-            </blockquote>
-            <p className="mt-6 text-sm leading-7 text-slate-300">
-              Bytecode Consulting focuses on clear implementation, better systems, and sensible adoption so organisations get useful outcomes rather than unnecessary complexity.
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Why Bytecode exists</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white">To help businesses use modern technology in ways that are practical, usable, and commercially sensible.</h2>
+            <p className="mt-5 text-base leading-8 text-slate-300">
+              Many organisations want to explore AI, modernise in the cloud, or improve the software they rely on, but they do not always need a large consultancy model or abstract strategy language.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-300">
+              Bytecode Consulting was created to offer a more grounded approach: clear thinking, strong engineering standards, and support that helps teams understand and adopt what gets delivered.
             </p>
           </Card>
         </div>
@@ -55,16 +75,34 @@ export default function AboutPage() {
       <section className="section-backdrop py-20">
         <div className="section-shell">
           <SectionHeading
-            eyebrow="Why Bytecode"
-            title="Clear differentiators that matter in real engagements."
-            copy="The offer is shaped to work for SMEs, schools, startups, and organisations that need strong technical support without unnecessary bureaucracy or hype."
+            eyebrow="How We Work"
+            title="A practical approach built around trust, delivery, and adoption."
+            copy="For an early-stage consultancy, the strongest credibility comes from how the work is approached: clear priorities, good engineering habits, and an emphasis on useful outcomes."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {differentiators.map((item) => (
-              <Card key={item} className="p-6">
-                <p className="text-sm leading-7 text-slate-200">{item}</p>
+            {workingPrinciples.map((item) => (
+              <Card key={item.title} className="p-6">
+                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-200">{item.copy}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="section-shell">
+          <div className="glass-panel rounded-[2rem] p-8 sm:p-10">
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Who We Help</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+              Built for organisations that want practical progress with AI, cloud, and software.
+            </h2>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-300">
+              Bytecode Consulting is a good fit for growing businesses, modernising teams, and organisations that want support navigating AI adoption, cloud change, software delivery, or technical training without unnecessary complexity.
+            </p>
+            <div className="mt-8">
+              <Button href="/contact">Start a conversation</Button>
+            </div>
           </div>
         </div>
       </section>

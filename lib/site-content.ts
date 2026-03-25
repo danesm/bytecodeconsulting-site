@@ -1,6 +1,7 @@
 export const navItems = [
   { label: "Services", href: "/services" },
   { label: "Training", href: "/training" },
+  { label: "News", href: "/news" },
   { label: "Schools & Students", href: "/schools-students" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

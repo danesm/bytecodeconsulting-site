@@ -5,6 +5,7 @@ export function Footer() {
   const quickLinks = [
     { label: "Services", href: "/services" },
     { label: "Training", href: "/training" },
+    { label: "News", href: "/news" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
@@ -28,11 +29,6 @@ export function Footer() {
                 <p className="mt-1 text-sm text-slate-500">Dartford, Kent • Working with organisations across the UK and beyond</p>
               </div>
             </div>
-
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-400">
-              Bytecode Consulting helps organisations adopt AI practically, modernise with cloud-native delivery, and
-              build software that improves operations with the right training and enablement around it.
-            </p>
           </div>
 
           <div>
