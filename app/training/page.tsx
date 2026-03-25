@@ -72,9 +72,8 @@ export default function TrainingPage() {
             <p className="text-sm uppercase tracking-[0.32em] text-cyan-200">Formats</p>
             <div className="mt-5 grid gap-4">
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-200">Half-day or full-day workshops</div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-200">Leadership or non-technical awareness sessions</div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-200">Tailored training programmes for teams, professionals, and students</div>
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-200">Developer mentoring and team enablement</div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm leading-7 text-slate-200">Custom sessions tailored to your operating context</div>
             </div>
             <div className="mt-8">
               <Button href="/contact">Book a workshop</Button>
